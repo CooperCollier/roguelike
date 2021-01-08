@@ -26,6 +26,13 @@ public class Player : MonoBehaviour {
 					   MoveLeft, MoveRight, MoveUp, MoveDown}
 	public static State currentState;
 
+    public enum Spell {MagicMissile, Fireball, None}
+    public static Spell spell1;
+    public static Spell spell2;
+    public static Spell spell3;
+    public static Spell spell4;
+    public static int selectedSpell = 1;
+
 	Rigidbody2D rigidbody2D;
 	Animator animator;
 
@@ -34,6 +41,11 @@ public class Player : MonoBehaviour {
     void Start() {
 
     	currentState = State.IdleRight;
+
+        spell1 = Spell.MagicMissile;
+        spell2 = Spell.None;
+        spell3 = Spell.None;
+        spell4 = Spell.None;
 
     	rigidbody2D = GetComponent<Rigidbody2D>();
     	animator = GetComponent<Animator>();
@@ -51,6 +63,8 @@ public class Player : MonoBehaviour {
     	Dash();
 
     	Attack();
+
+        ChangeSpell();
 
     	UpdateAnimation();
         
@@ -147,6 +161,8 @@ public class Player : MonoBehaviour {
 
     		attkTime = maxAttkTime;
 
+            // use spell
+
     	} else if (attkTime > 0) {
     		attkTime -= Time.deltaTime;
     	} else if (attkTime <= 0) {
@@ -154,6 +170,25 @@ public class Player : MonoBehaviour {
     		attkTime = 0;
     	}
 
+    }
+
+    //--------------------------------------------------------------------------------
+
+    void ChangeSpell() {
+
+        if (Input.GetKeyDown(KeyCode.Left)) {
+            if (selectedSpell == 1) {
+                selectedSpell = 4;
+            } else {
+                selectedSpell -= 1;
+            }
+        } else if (Input.GetKeyDown(KeyCode.Right) {
+            if (selectedSpell == 4) {
+                selectedSpell = 1;
+            } else {
+                selectedSpell += 1;
+            }
+        }
     }
 
     //--------------------------------------------------------------------------------
