@@ -96,6 +96,8 @@ public class Player : MonoBehaviour {
         DecrementInvincibilityTime();
 
         if (Input.GetKey(KeyCode.Escape)) {Application.Quit();}
+
+        Debug.Log(coins);
         
     }
 
@@ -291,6 +293,15 @@ public class Player : MonoBehaviour {
             invincibilityTime = maxInvincibilityTime;
         }
 
+    }
+
+    //--------------------------------------------------------------------------------
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Coin") {
+            Destroy(collision.gameObject);
+            coins += 1;
+        }
     }
 
     //--------------------------------------------------------------------------------

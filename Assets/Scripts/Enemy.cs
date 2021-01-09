@@ -8,11 +8,16 @@ public abstract class Enemy : MonoBehaviour {
 
 	public static Player player;
 
+    public Coin coin;
+
     [SerializeField]
     public float speed;
 
     [SerializeField]
     public int attack;
+
+    [SerializeField]
+    public int reward;
 
     [SerializeField]
     public int maxHealth;
@@ -61,6 +66,10 @@ public abstract class Enemy : MonoBehaviour {
     public void Despawn() {
 
     	// Play death animation
+    	for (int i = 0; i < reward; i += 1) { 
+    		Coin newCoin = Instantiate(coin); 
+    		newCoin.transform.position = transform.position;
+    	}
     	Destroy(gameObject);
     	
     }
