@@ -47,6 +47,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2fc32b791ca47a786fa2b6dfdebe89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magicMissile: {fileID: 3906875546841680971, guid: cf24266535cc54d3fa36461ab2fc5088,
+    type: 3}
+  fireball: {fileID: 1576840636468989060, guid: 823b85d17a2214d3a9c6d2a3c71d29b7,
+    type: 3}
+  speed: 1
+  dashSpeed: 3
+  maxDashTime: 0.2
+  dashTime: 0
+  maxAttkTime: 0.2
+  attkTime: 0
 --- !u!50 &2631900897007431052
 Rigidbody2D:
   serializedVersion: 4

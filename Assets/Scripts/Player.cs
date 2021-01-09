@@ -6,35 +6,41 @@ public class Player : MonoBehaviour {
 
 	//--------------------------------------------------------------------------------
 
-	public static int health = 100;
-	public static int mana = 100;
-	public static int coins = 0;
-	public static bool alive = true;
+    [SerializeField]
+    public Spell magicMissile;
+    [SerializeField]
+    public Spell fireball;
+    // More prefabs for spells here...
 
-	private float speed = 1f;
-	private float dashSpeed = 3f;
+    Rigidbody2D rigidbody2D;
+    Animator animator;
+    // More components here...
 
-	private float maxDashTime = 0.3f;
-	private float dashTime;
+    [SerializeField]
+	public float speed;
+    [SerializeField]
+	public float dashSpeed;
 
-	private float maxAttkTime = 0.2f;
-	private float attkTime;
+    [SerializeField]
+	public float maxDashTime;
+	public float dashTime;
 
-	public static Vector2 attkDirection = Vector2.zero;
+    [SerializeField]
+	public float maxAttkTime;
+	public float attkTime;
 
-	public enum State {IdleLeft, IdleRight, IdleUp, IdleDown, 
-					   MoveLeft, MoveRight, MoveUp, MoveDown}
+    public static int health = 100;
+    public static int mana = 100;
+    public static int coins = 0;
+    public static bool alive = true;
+
+	public enum State {IdleLeft, IdleRight, IdleUp, IdleDown, MoveLeft, MoveRight, MoveUp, MoveDown};
 	public static State currentState;
 
-    public enum Spell {MagicMissile, Fireball, None}
-    public static Spell spell1;
-    public static Spell spell2;
-    public static Spell spell3;
-    public static Spell spell4;
-    public static int selectedSpell = 1;
+    public static Vector2 attkDirection = Vector2.zero;
 
-	Rigidbody2D rigidbody2D;
-	Animator animator;
+    public static Spell[] spells = { null, null, null, null };
+    public static int selectedSpell = 0;
 
     //--------------------------------------------------------------------------------
 
@@ -42,10 +48,8 @@ public class Player : MonoBehaviour {
 
     	currentState = State.IdleRight;
 
-        spell1 = Spell.MagicMissile;
-        spell2 = Spell.None;
-        spell3 = Spell.None;
-        spell4 = Spell.None;
+        spells[0] = magicMissile;
+        spells[1] = fireball;
 
     	rigidbody2D = GetComponent<Rigidbody2D>();
     	animator = GetComponent<Animator>();
@@ -67,6 +71,8 @@ public class Player : MonoBehaviour {
         ChangeSpell();
 
     	UpdateAnimation();
+
+        if (Input.GetKey(KeyCode.Escape)) {Application.Quit();}
         
     }
 
@@ -146,6 +152,8 @@ public class Player : MonoBehaviour {
 
     	if (Input.GetKeyDown(KeyCode.Space) && attkTime == 0) {
 
+            if (spells[selectedSpell] == null) { return; }
+
     		if (currentState == State.MoveUp || currentState == State.IdleUp) {
     			attkDirection = Vector2.up;
     		} 
@@ -159,9 +167,12 @@ public class Player : MonoBehaviour {
     			attkDirection = Vector2.right;
     		}
 
-    		attkTime = maxAttkTime;
+            attkTime = maxAttkTime;
 
-            // use spell
+            Spell newSpell = (Spell) Instantiate(spells[selectedSpell]);
+
+            newSpell.GetComponent<Transform>().position = transform.position;
+            newSpell.direction = attkDirection;
 
     	} else if (attkTime > 0) {
     		attkTime -= Time.deltaTime;
@@ -176,15 +187,15 @@ public class Player : MonoBehaviour {
 
     void ChangeSpell() {
 
-        if (Input.GetKeyDown(KeyCode.Left)) {
-            if (selectedSpell == 1) {
-                selectedSpell = 4;
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            if (selectedSpell == 0) {
+                selectedSpell = 3;
             } else {
                 selectedSpell -= 1;
             }
-        } else if (Input.GetKeyDown(KeyCode.Right) {
-            if (selectedSpell == 4) {
-                selectedSpell = 1;
+        } else if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            if (selectedSpell == 3) {
+                selectedSpell = 0;
             } else {
                 selectedSpell += 1;
             }

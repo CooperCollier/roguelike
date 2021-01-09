@@ -6,10 +6,17 @@ public abstract class Spell : MonoBehaviour {
 
     //--------------------------------------------------------------------------------
 
+    [SerializeField]
+    int damage;
+
+    [SerializeField]
+    float speed;
+
+    [SerializeField]
     float maxTimeToLive;
     float timeToLive;
 
-    int damage;
+    public Vector2 direction = Vector2.zero;
 
     //--------------------------------------------------------------------------------
 
@@ -23,9 +30,22 @@ public abstract class Spell : MonoBehaviour {
 
     void Update() {
 
-    	//
+    	timeToLive -= Time.deltaTime;
+        if (timeToLive <= 0) { Despawn(); }
+
+        transform.Translate(direction * speed * Time.deltaTime);
+
+        SpecificUpdate();
         
     }
 
     //--------------------------------------------------------------------------------
+
+    public abstract void SpecificUpdate();
+
+    public abstract void Despawn();
+
+    //--------------------------------------------------------------------------------
+
+
 }
