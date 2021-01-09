@@ -79,7 +79,7 @@ public class Player : MonoBehaviour {
 
     void Update() {
 
-    	if (!alive) {return;}
+    	if (!alive || (Time.timeScale == 0f) ) {return;}
 
     	Move();
 
@@ -96,8 +96,6 @@ public class Player : MonoBehaviour {
         DecrementInvincibilityTime();
 
         if (Input.GetKey(KeyCode.Escape)) {Application.Quit();}
-
-        Debug.Log(coins);
         
     }
 

@@ -25,6 +25,13 @@ public class UIManager : MonoBehaviour {
 	public GameObject spellSlot3;
 	public GameObject[] spellSlots;
 
+    [SerializeField]
+    public GameObject pauseButton;
+    [SerializeField]
+    public GameObject pauseScreen;
+    [SerializeField]
+    public GameObject coinsText;
+
     //--------------------------------------------------------------------------------
 
     void Start() {
@@ -35,6 +42,9 @@ public class UIManager : MonoBehaviour {
     	manaBarSlider.maxValue = player.maxMana;
 
     	spellSlots = new GameObject[] {spellSlot0, spellSlot1, spellSlot2, spellSlot3};
+
+        pauseButton.SetActive(true);
+        pauseScreen.SetActive(false);
         
     }
 
@@ -54,6 +64,7 @@ public class UIManager : MonoBehaviour {
     	SetHealthBar();
     	SetManaBar();
     	UpdateSpellSlots();
+        UpdateCoinsText();
         
     }
 
@@ -81,6 +92,24 @@ public class UIManager : MonoBehaviour {
 
     	}
 
+    }
+
+    void UpdateCoinsText() {
+        coinsText.GetComponent<Text>().text = ("Coins: " + coins.ToString());
+    }
+
+    //--------------------------------------------------------------------------------
+
+    void Pause() {
+        pauseButton.SetActive(false);
+        pauseScreen.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    void UnPause() {
+        pauseButton.SetActive(true);
+        pauseScreen.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     //--------------------------------------------------------------------------------
