@@ -55,13 +55,13 @@ MonoBehaviour:
   dashSpeed: 3
   maxDashTime: 0.2
   dashTime: 0
-  maxAttkTime: 0.2
+  maxAttkTime: 0.1
   attkTime: 0
   maxHealth: 100
   health: 0
   maxMana: 100
   mana: 0
-  manaRecoveryRate: 5
+  manaRecoveryRate: 10
   dashManaCost: 10
 --- !u!50 &2631900897007431052
 Rigidbody2D:

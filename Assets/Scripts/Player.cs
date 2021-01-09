@@ -263,5 +263,17 @@ public class Player : MonoBehaviour {
     }
 
     //--------------------------------------------------------------------------------
+
+    public int ReportHealth() { return health; }
+
+    public float ReportMana() { return mana; }
+
+    public int ReportCoins() { return coins; }
+
+    public bool ReportAlive() { return alive; }
+
+    public int ReportSelectedSpell() { return selectedSpell; }
+
+    //--------------------------------------------------------------------------------
     
 }
