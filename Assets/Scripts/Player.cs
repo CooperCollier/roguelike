@@ -47,6 +47,10 @@ public class Player : MonoBehaviour {
     public static int selectedSpell = 0;
 
     [SerializeField]
+    public float maxInvincibilityTime;
+    public float invincibilityTime;
+
+    [SerializeField]
     public float manaRecoveryRate;
 
     [SerializeField]
@@ -88,6 +92,8 @@ public class Player : MonoBehaviour {
     	UpdateAnimation();
 
         RecoverMana();
+
+        DecrementInvincibilityTime();
 
         if (Input.GetKey(KeyCode.Escape)) {Application.Quit();}
         
@@ -197,7 +203,9 @@ public class Player : MonoBehaviour {
 
             Spell newSpell = (Spell) Instantiate(spells[selectedSpell]);
 
-            newSpell.GetComponent<Transform>().position = transform.position;
+            Vector3 offset = attkDirection * 0.1f;
+
+            newSpell.GetComponent<Transform>().position = transform.position + offset;
             newSpell.direction = attkDirection;
 
     	} else if (attkTime > 0) {
@@ -262,6 +270,29 @@ public class Player : MonoBehaviour {
         }
     }
 
+    void DecrementInvincibilityTime() {
+        if (invincibilityTime <= 0) {
+            invincibilityTime = 0;
+        } else {
+            invincibilityTime -= Time.deltaTime;
+        }
+    }
+
+    //--------------------------------------------------------------------------------
+
+    public void TakeDamage(int damage) {
+
+        if (invincibilityTime > 0) { return; }
+        // flash the sprite red
+        health -= damage;
+        if (health < 0) { 
+            health = 0; 
+        } else {
+            invincibilityTime = maxInvincibilityTime;
+        }
+
+    }
+
     //--------------------------------------------------------------------------------
 
     public int ReportHealth() { return health; }
@@ -275,6 +306,8 @@ public class Player : MonoBehaviour {
     public int ReportSelectedSpell() { return selectedSpell; }
 
     public Spell[] ReportSpells() { return spells; }
+
+    public Vector3 ReportLocation() { return transform.position; }
 
     //--------------------------------------------------------------------------------
     

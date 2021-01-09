@@ -42,11 +42,27 @@ public abstract class Spell : MonoBehaviour {
         
     }
 
-    //--------------------------------------------------------------------------------
-
     public abstract void SpecificUpdate();
 
-    public abstract void Despawn();
+    //--------------------------------------------------------------------------------
+
+    public void Despawn() {
+
+        // Play particle effect
+        Destroy(gameObject);
+
+    }
+
+    //--------------------------------------------------------------------------------
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Player") {
+            return;
+        } else if (collision.gameObject.tag == "Enemy") {
+            collision.gameObject.SendMessage("TakeDamage", damage); // Change This
+        }
+        Despawn();
+    }
 
     //--------------------------------------------------------------------------------
 

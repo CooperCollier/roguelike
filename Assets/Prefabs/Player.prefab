@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2631900897007431050}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +61,8 @@ MonoBehaviour:
   health: 0
   maxMana: 100
   mana: 0
+  maxInvincibilityTime: 0.5
+  invincibilityTime: 0
   manaRecoveryRate: 10
   dashManaCost: 10
 --- !u!50 &2631900897007431052
