@@ -403,10 +403,70 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 800183724067984520, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724067984522, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724067984523, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724067984523, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 800183724077413553, guid: 038fccabbd7aa4433a5e177776a8f03e,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724160749224, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724160749225, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724160749225, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724160749230, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724567883972, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724567883978, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724681150211, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800183724681150237, guid: 038fccabbd7aa4433a5e177776a8f03e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 800183724749407624, guid: 038fccabbd7aa4433a5e177776a8f03e,
         type: 3}

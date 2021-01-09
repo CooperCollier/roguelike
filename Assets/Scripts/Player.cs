@@ -274,6 +274,8 @@ public class Player : MonoBehaviour {
 
     public int ReportSelectedSpell() { return selectedSpell; }
 
+    public Spell[] ReportSpells() { return spells; }
+
     //--------------------------------------------------------------------------------
     
 }

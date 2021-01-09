@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour {
 	public int coins;
 	public bool alive;
 	public int selectedSpell;
+	public Spell[] spells;
 
 	public Slider healthBarSlider;
 	public Slider manaBarSlider;
@@ -48,10 +49,10 @@ public class UIManager : MonoBehaviour {
     	coins = player.ReportCoins();
     	alive = player.ReportAlive();
     	selectedSpell = player.ReportSelectedSpell();
+    	spells = player.ReportSpells();
 
     	SetHealthBar();
     	SetManaBar();
-
     	UpdateSpellSlots();
         
     }
@@ -59,13 +60,27 @@ public class UIManager : MonoBehaviour {
     //--------------------------------------------------------------------------------
 
     void UpdateSpellSlots() {
-    	for (int i = 0; i < spellSlots.Length; i += 1) {
-    		if (i == selectedSpell) {
-    			spellSlots[selectedSpell].transform.GetChild(0).gameObject.SetActive(true);
+
+    	for (int index = 0; index < spellSlots.Length; index += 1) {
+
+    		if (selectedSpell == index) {
+    			spellSlots[index].transform.GetChild(1).gameObject.SetActive(true);
     		} else {
-    			spellSlots[selectedSpell].transform.GetChild(0).gameObject.SetActive(false);
+    			spellSlots[index].transform.GetChild(1).gameObject.SetActive(false);
     		}
+
+    		if (spells[index] == null) {
+    			spellSlots[index].transform.GetChild(2).gameObject.SetActive(false);
+    		} else {
+    			spellSlots[index].transform.GetChild(2).gameObject.SetActive(true);
+    			Image source = spells[index].GetComponent<Image>();
+    			Image target = spellSlots[index].transform.GetChild(2).gameObject.GetComponent<Image>();
+    			target.sprite = source.sprite;
+    			target.SetNativeSize();
+    		}
+
     	}
+
     }
 
     //--------------------------------------------------------------------------------
