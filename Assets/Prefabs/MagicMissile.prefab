@@ -145,5 +145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   speed: 2
+  manaCost: 10
   maxTimeToLive: 2
   direction: {x: 0, y: 0}

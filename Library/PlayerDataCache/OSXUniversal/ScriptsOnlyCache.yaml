@@ -56,13 +56,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 12424}
+      Script: {instanceID: 11796}
     - Class: 114
-      Script: {instanceID: 12714}
+      Script: {instanceID: 12428}
     - Class: 114
-      Script: {instanceID: 13398}
+      Script: {instanceID: 12718}
     - Class: 114
-      Script: {instanceID: 14780}
+      Script: {instanceID: 13402}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -214,6 +214,12 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
+      Hash: 7b7391f521a8e70fd7b101320e38deea
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Fireball
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -340,7 +346,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 297ba45857baf8fbd68df8289030c1e4
+      Hash: 7b7391f521a8e70fd7b101320e38deea
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MagicMissile
@@ -436,7 +442,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: fa1ef894f4e767edeae337d847d0484d
+      Hash: 9e6953965698ebcaf711038deca8adcf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -572,12 +578,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 297ba45857baf8fbd68df8289030c1e4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Fireball
   platform: 2
   scenePathNames:
   - Assets/TestScene.unity

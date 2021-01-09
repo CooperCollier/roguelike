@@ -29,22 +29,37 @@ public class Player : MonoBehaviour {
 	public float maxAttkTime;
 	public float attkTime;
 
-    public static int health = 100;
-    public static int mana = 100;
+    [SerializeField]
+    public int maxHealth;
+    public int health;
+
+    [SerializeField]
+    public float maxMana;
+    public float mana;
+
     public static int coins = 0;
     public static bool alive = true;
 
 	public enum State {IdleLeft, IdleRight, IdleUp, IdleDown, MoveLeft, MoveRight, MoveUp, MoveDown};
 	public static State currentState;
 
-    public static Vector2 attkDirection = Vector2.zero;
-
     public static Spell[] spells = { null, null, null, null };
     public static int selectedSpell = 0;
+
+    [SerializeField]
+    public float manaRecoveryRate;
+
+    [SerializeField]
+    public float dashManaCost;
+
+    public static Vector2 attkDirection = Vector2.zero;
 
     //--------------------------------------------------------------------------------
 
     void Start() {
+
+        health = maxHealth;
+        mana = maxMana;
 
     	currentState = State.IdleRight;
 
@@ -71,6 +86,8 @@ public class Player : MonoBehaviour {
         ChangeSpell();
 
     	UpdateAnimation();
+
+        RecoverMana();
 
         if (Input.GetKey(KeyCode.Escape)) {Application.Quit();}
         
@@ -116,7 +133,7 @@ public class Player : MonoBehaviour {
 
     void Dash() {
 
-    	if (Input.GetKeyDown(KeyCode.M) && dashTime == 0) {
+    	if (Input.GetKeyDown(KeyCode.M) && dashTime == 0 && mana > dashManaCost) {
 
     		if (currentState == State.MoveUp || currentState == State.IdleUp) {
     			currentState = State.MoveUp;
@@ -137,6 +154,8 @@ public class Player : MonoBehaviour {
 
     		dashTime = maxDashTime;
 
+            mana -= dashManaCost;
+
     	} else if (dashTime > 0) {
     		dashTime -= Time.deltaTime;
     	} else if (dashTime <= 0) {
@@ -153,6 +172,13 @@ public class Player : MonoBehaviour {
     	if (Input.GetKeyDown(KeyCode.Space) && attkTime == 0) {
 
             if (spells[selectedSpell] == null) { return; }
+
+            int manaCost = spells[selectedSpell].manaCost;
+            if (mana < manaCost) {
+                return;
+            } else {
+                mana -= manaCost;
+            }
 
     		if (currentState == State.MoveUp || currentState == State.IdleUp) {
     			attkDirection = Vector2.up;
@@ -224,6 +250,16 @@ public class Player : MonoBehaviour {
     		animator.Play(stateName, 0);
     	}
 
+    }
+
+    //--------------------------------------------------------------------------------
+
+    void RecoverMana() {
+        if (mana >= maxMana) {
+            mana = maxMana;
+        } else {
+            mana += Time.deltaTime * manaRecoveryRate;
+        }
     }
 
     //--------------------------------------------------------------------------------

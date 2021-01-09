@@ -7,10 +7,13 @@ public abstract class Spell : MonoBehaviour {
     //--------------------------------------------------------------------------------
 
     [SerializeField]
-    int damage;
+    public int damage;
 
     [SerializeField]
-    float speed;
+    public float speed;
+
+    [SerializeField]
+    public int manaCost;
 
     [SerializeField]
     float maxTimeToLive;
