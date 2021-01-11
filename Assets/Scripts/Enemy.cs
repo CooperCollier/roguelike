@@ -20,6 +20,9 @@ public abstract class Enemy : MonoBehaviour {
     public int reward;
 
     [SerializeField]
+    public int aggroRadius;
+
+    [SerializeField]
     public int maxHealth;
     public int health;
 
@@ -43,7 +46,9 @@ public abstract class Enemy : MonoBehaviour {
 
     	playerLocation = player.ReportLocation();
 
-    	SpecificUpdate();
+    	if ((playerLocation - transform.position).magnitude < aggroRadius) {
+    		SpecificUpdate();
+    	}
         
     }
 

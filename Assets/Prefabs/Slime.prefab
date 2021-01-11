@@ -168,6 +168,7 @@ MonoBehaviour:
   speed: 0.5
   attack: 15
   reward: 3
+  aggroRadius: 4
   maxHealth: 20
   health: 0
   playerLocation: {x: 0, y: 0, z: 0}

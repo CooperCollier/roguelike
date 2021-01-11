@@ -11,10 +11,10 @@ ScriptsOnlyBuild:
     - Player
     - Slime
     - UIManager
+    - Wisp
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -72,9 +72,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 13666}
+      Script: {instanceID: 13668}
     - Class: 114
-      Script: {instanceID: 14278}
+      Script: {instanceID: 14280}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -121,7 +121,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 588}
+      Script: {instanceID: 590}
     - Class: 114
       Script: {instanceID: 11148}
     - Class: 114
@@ -147,15 +147,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13202}
     - Class: 114
-      Script: {instanceID: 13416}
+      Script: {instanceID: 13336}
     - Class: 114
-      Script: {instanceID: 13508}
+      Script: {instanceID: 13418}
     - Class: 114
-      Script: {instanceID: 13666}
+      Script: {instanceID: 13510}
     - Class: 114
-      Script: {instanceID: 14002}
+      Script: {instanceID: 13668}
     - Class: 114
-      Script: {instanceID: 14278}
+      Script: {instanceID: 14004}
+    - Class: 114
+      Script: {instanceID: 14280}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -539,7 +541,7 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
-      Hash: 1ec77075931af15ba43ebcb1dc7dd06d
+      Hash: db23eee3db16ee8e4bd842f0f24659d8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Slime
@@ -585,6 +587,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GoldApple
+  - hash:
+      serializedVersion: 2
+      Hash: db23eee3db16ee8e4bd842f0f24659d8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Wisp
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
