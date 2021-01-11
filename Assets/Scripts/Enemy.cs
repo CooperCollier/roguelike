@@ -67,7 +67,7 @@ public abstract class Enemy : MonoBehaviour {
 
     	// Play death animation
     	for (int i = 0; i < reward; i += 1) { 
-    		Coin newCoin = Instantiate(coin); 
+    		Coin newCoin = Instantiate(coin);
     		newCoin.transform.position = transform.position;
     	}
     	Destroy(gameObject);

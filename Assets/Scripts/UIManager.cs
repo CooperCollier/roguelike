@@ -30,13 +30,16 @@ public class UIManager : MonoBehaviour {
     [SerializeField]
     public GameObject pauseScreen;
     [SerializeField]
+    public GameObject deathScreen;
+    [SerializeField]
     public GameObject coinsText;
 
     //--------------------------------------------------------------------------------
 
-    void Start() {
+    void Awake() {
 
     	alive = true;
+        Time.timeScale = 1f;
 
     	healthBarSlider.maxValue = player.maxHealth;
     	manaBarSlider.maxValue = player.maxMana;
@@ -45,6 +48,7 @@ public class UIManager : MonoBehaviour {
 
         pauseButton.SetActive(true);
         pauseScreen.SetActive(false);
+        deathScreen.SetActive(false);
         
     }
 
@@ -52,7 +56,9 @@ public class UIManager : MonoBehaviour {
 
     void Update() {
 
-    	if (!alive) {return;}
+    	if (!alive) { Die(); }
+        
+        if (Input.GetKey(KeyCode.Escape)) { Pause(); }
 
     	health = player.ReportHealth();
     	mana = player.ReportMana();
@@ -110,6 +116,16 @@ public class UIManager : MonoBehaviour {
         pauseButton.SetActive(true);
         pauseScreen.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    void Die() {
+        pauseButton.SetActive(false);
+        deathScreen.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    void Menu() {
+        SceneManager.LoadScene(0);
     }
 
     //--------------------------------------------------------------------------------

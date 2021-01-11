@@ -164,9 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19d471a43c9b47549eca05d02fc6911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: -6432696768916131871, guid: 088018c991c4040edaacc7ee956a160e, type: 3}
+  coin: {fileID: 3021955428932942146, guid: 088018c991c4040edaacc7ee956a160e, type: 3}
   speed: 0.5
-  attack: 5
+  attack: 15
   reward: 3
   maxHealth: 20
   health: 0

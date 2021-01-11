@@ -51,7 +51,12 @@ MonoBehaviour:
     type: 3}
   fireball: {fileID: 1576840636468989060, guid: 823b85d17a2214d3a9c6d2a3c71d29b7,
     type: 3}
-  speed: 1
+  coin: {fileID: 3021955428932942146, guid: 088018c991c4040edaacc7ee956a160e, type: 3}
+  apple: {fileID: 3680088518965939958, guid: 2a6b79674746a48cab45e7c68f1d0dfd, type: 3}
+  goldApple: {fileID: 0}
+  book: {fileID: 0}
+  coffee: {fileID: 0}
+  speed: 1.5
   dashSpeed: 3
   maxDashTime: 0.2
   dashTime: 0
@@ -65,6 +70,7 @@ MonoBehaviour:
   invincibilityTime: 0
   manaRecoveryRate: 10
   dashManaCost: 10
+  coffeeActive: 0
 --- !u!50 &2631900897007431052
 Rigidbody2D:
   serializedVersion: 4

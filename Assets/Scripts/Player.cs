@@ -14,7 +14,19 @@ public class Player : MonoBehaviour {
 
     Rigidbody2D rigidbody2D;
     Animator animator;
-    // More components here...
+    // More componenets here...
+
+    [SerializeField]
+    public Coin coin;
+    [SerializeField]
+    public Apple apple;
+    [SerializeField]
+    public GoldApple goldApple;
+    [SerializeField]
+    public Book book;
+    [SerializeField]
+    public Coffee coffee;
+    // More items here...
 
     [SerializeField]
 	public float speed;
@@ -37,8 +49,8 @@ public class Player : MonoBehaviour {
     public float maxMana;
     public float mana;
 
-    public static int coins = 0;
-    public static bool alive = true;
+    public static int coins;
+    public static bool alive;
 
 	public enum State {IdleLeft, IdleRight, IdleUp, IdleDown, MoveLeft, MoveRight, MoveUp, MoveDown};
 	public static State currentState;
@@ -56,6 +68,8 @@ public class Player : MonoBehaviour {
     [SerializeField]
     public float dashManaCost;
 
+    public bool coffeeActive;
+
     public static Vector2 attkDirection = Vector2.zero;
 
     //--------------------------------------------------------------------------------
@@ -64,11 +78,15 @@ public class Player : MonoBehaviour {
 
         health = maxHealth;
         mana = maxMana;
+        coins = 0;
+        alive = true;
 
     	currentState = State.IdleRight;
 
         spells[0] = magicMissile;
         spells[1] = fireball;
+
+        coffeeActive = false;
 
     	rigidbody2D = GetComponent<Rigidbody2D>();
     	animator = GetComponent<Animator>();
@@ -79,6 +97,7 @@ public class Player : MonoBehaviour {
 
     void Update() {
 
+        if (health <= 0) { alive = false; }
     	if (!alive || (Time.timeScale == 0f) ) {return;}
 
     	Move();
@@ -94,8 +113,6 @@ public class Player : MonoBehaviour {
         RecoverMana();
 
         DecrementInvincibilityTime();
-
-        if (Input.GetKey(KeyCode.Escape)) {Application.Quit();}
         
     }
 
@@ -284,6 +301,7 @@ public class Player : MonoBehaviour {
 
         if (invincibilityTime > 0) { return; }
         // flash the sprite red
+        if (coffeeActive) { EndCoffee(); }
         health -= damage;
         if (health < 0) { 
             health = 0; 
@@ -296,10 +314,66 @@ public class Player : MonoBehaviour {
     //--------------------------------------------------------------------------------
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Coin") {
+
+        if (collision.gameObject.tag == "Item") {
+
+            Item item = (Item) collision.gameObject.GetComponent<Item>();
+
+            if (item.GetItemType() == "Coin") {
+                GetCoin();
+            }
+            if (item.GetItemType() == "Apple") {
+                GetApple();
+            }
+            if (item.GetItemType() == "GoldApple") {
+                GetGoldApple();
+            }
+            if (item.GetItemType() == "Coffee") {
+                if (!coffee) { StartCoffee(); }
+            }
+            if (item.GetItemType() == "Book") {
+                GetBook();
+            }
+
             Destroy(collision.gameObject);
-            coins += 1;
+
         }
+
+    }
+
+    //--------------------------------------------------------------------------------
+
+    public void GetCoin() {
+        coins += 1;
+    }
+
+    public void GetApple() {
+        health += 20;
+        if (health > maxHealth) { health = maxHealth; }
+    }
+
+    public void GetGoldApple() {
+        health = maxHealth;
+    }
+
+    public void GetBook() {
+        Debug.Log("Got a book!");
+    }
+
+    public void StartCoffee() {
+        coffeeActive = true;
+        speed *= 1.5f;
+        dashSpeed *= 1.5f;
+        manaRecoveryRate *= 2f;
+    }
+
+    public void EndCoffee() {
+
+        coffeeActive = false;
+        speed /= 1.5f;
+        dashSpeed /= 1.5f;
+        manaRecoveryRate /= 2f;
+        
     }
 
     //--------------------------------------------------------------------------------
