@@ -56,8 +56,10 @@ MonoBehaviour:
   damage: 10
   speed: 4
   manaCost: 20
+  knockback: 1
   maxTimeToLive: 1
   direction: {x: 0, y: 0}
+  blastRadius: 0
 --- !u!212 &7346423582472376781
 SpriteRenderer:
   m_ObjectHideFlags: 0

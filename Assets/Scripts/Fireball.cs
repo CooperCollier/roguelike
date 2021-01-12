@@ -4,21 +4,44 @@ using UnityEngine;
 
 public class Fireball : Spell {
 
+    //--------------------------------------------------------------------------------
+
+    [SerializeField]
+    public float blastRadius;
+
+    bool exploded = false;
+
+    float explosionTime = 0.5f;
+
+    float explosionRadius = 4f;
+
 	//--------------------------------------------------------------------------------
 
 	public override void SpecificUpdate() {
-
+        if (explosionTime <= 0) { 
+            Despawn(); 
+        } else if (exploded) {
+            explosionTime -= Time.deltaTime;
+        }
     }
 
     //--------------------------------------------------------------------------------
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Item" ) {
+
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Item") {
             return;
-        } else if (collision.gameObject.tag == "Enemy") {
-            collision.gameObject.SendMessage("TakeDamage", damage); // Change This
         }
-        Despawn();
+
+        if (!exploded) {
+            //Change animation to blast
+            transform.localScale *= explosionRadius;
+            direction = Vector2.zero;
+            exploded = true;
+        }
+
+        if (collision.gameObject.tag == "Enemy") { Attack(collision.gameObject); }
+
     }
 
     //--------------------------------------------------------------------------------

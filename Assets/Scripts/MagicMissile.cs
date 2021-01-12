@@ -16,7 +16,7 @@ public class MagicMissile : Spell {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Item") {
             return;
         } else if (collision.gameObject.tag == "Enemy") {
-            collision.gameObject.SendMessage("TakeDamage", damage); // Change This
+            Attack(collision.gameObject);
         }
         Despawn();
     }

@@ -153,6 +153,7 @@ MonoBehaviour:
   damage: 5
   speed: 2
   manaCost: 10
+  knockback: 1
   maxTimeToLive: 2
   direction: {x: 0, y: 0}
 --- !u!222 &7809186313629420133

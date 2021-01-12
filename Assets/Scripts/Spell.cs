@@ -16,6 +16,9 @@ public abstract class Spell : MonoBehaviour {
     public int manaCost;
 
     [SerializeField]
+    public float knockback;
+
+    [SerializeField]
     float maxTimeToLive;
     float timeToLive;
 
@@ -46,14 +49,17 @@ public abstract class Spell : MonoBehaviour {
 
     //--------------------------------------------------------------------------------
 
-    public void Despawn() {
+    public void Attack (GameObject enemy) {
+        enemy.SendMessage("TakeDamage", damage); // change this
+        Vector2 directionToEnemy = (enemy.transform.position - transform.position).normalized;
+        enemy.SendMessage("Push", directionToEnemy * knockback);
+    }
 
+    public void Despawn() {
         // Play particle effect
         Destroy(gameObject);
-
     }
 
     //--------------------------------------------------------------------------------
-
 
 }

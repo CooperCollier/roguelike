@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0015623868, y: 0.0022168607}
+  m_Offset: {x: -0.0015623868, y: -0.08077386}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14600569, y: 0.25063396}
+  m_Size: {x: 0.14600569, y: 0.084652506}
   m_EdgeRadius: 0
 --- !u!50 &5520965165350788893
 Rigidbody2D:
@@ -163,6 +163,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b479ba0851346649987131d70e91ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  rigidbody2D: {fileID: 0}
+  maxDamageTime: 0.1
+  damageTime: 0
+  maxPauseTime: 1.5
+  pauseTime: 0
   coin: {fileID: 3021955428932942146, guid: 088018c991c4040edaacc7ee956a160e, type: 3}
   speed: 0.25
   attack: 20

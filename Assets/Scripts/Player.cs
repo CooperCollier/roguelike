@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
 
     Rigidbody2D rigidbody2D;
     Animator animator;
+    SpriteRenderer spriteRenderer;
     // More componenets here...
 
     [SerializeField]
@@ -90,6 +91,7 @@ public class Player : MonoBehaviour {
 
     	rigidbody2D = GetComponent<Rigidbody2D>();
     	animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         
     }
 
@@ -290,6 +292,7 @@ public class Player : MonoBehaviour {
     void DecrementInvincibilityTime() {
         if (invincibilityTime <= 0) {
             invincibilityTime = 0;
+            spriteRenderer.color = Color.white;
         } else {
             invincibilityTime -= Time.deltaTime;
         }
@@ -299,8 +302,8 @@ public class Player : MonoBehaviour {
 
     public void TakeDamage(int damage) {
 
-        if (invincibilityTime > 0) { return; }
-        // flash the sprite red
+        if (invincibilityTime > 0 || dashTime > 0) { return; }
+        spriteRenderer.color = Color.red;
         if (coffeeActive) { EndCoffee(); }
         health -= damage;
         if (health < 0) { 
