@@ -16,7 +16,7 @@ public class Slime : Enemy {
 
     	Vector3 direction = playerLocation - transform.position;
     	direction = direction.normalized;
-    	transform.Translate(direction * speed * Time.deltaTime);
+    	rigidbody2D.velocity = direction * speed;
 
     }
 

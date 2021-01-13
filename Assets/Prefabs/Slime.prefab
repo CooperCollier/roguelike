@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1317718694637627980}
   - component: {fileID: 1317718694637627979}
   - component: {fileID: 6831348411176149127}
-  - component: {fileID: 2054291912}
   - component: {fileID: 2088965667341125111}
   m_Layer: 0
   m_Name: Slime
@@ -120,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0003528595, y: -0.04591165}
+  m_Offset: {x: -0.0003528595, y: -0.050670605}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1184181, y: 0.04933106}
+  m_Size: {x: 0.1184181, y: 0.039813153}
   m_EdgeRadius: 0
 --- !u!50 &1317718694637627979
 Rigidbody2D:
@@ -182,32 +181,6 @@ MonoBehaviour:
   maxHealth: 20
   health: 0
   playerLocation: {x: 0, y: 0, z: 0}
---- !u!61 &2054291912
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317718694637627975}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.054023683}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.27, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.18148279, y: 0.010250092}
-  m_EdgeRadius: 0
 --- !u!58 &2088965667341125111
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -221,6 +194,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003279239, y: -0.025919825}
+  m_Offset: {x: -0.002227597, y: -0.031879142}
   serializedVersion: 2
-  m_Radius: 0.1271255
+  m_Radius: 0.09207093

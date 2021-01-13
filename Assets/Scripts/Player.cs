@@ -128,21 +128,26 @@ public class Player : MonoBehaviour {
 
     void Move() {
 
+    	if (dashTime > 0) { return; }
+
     	if (Input.GetKey(KeyCode.W)) {
-    		transform.Translate(Vector2.up * speed * Time.deltaTime);
+    		//transform.Translate(Vector2.up * speed * Time.deltaTime);
+    		rigidbody2D.velocity = new Vector2(0, speed);
     		currentState = State.MoveUp;
-    	} 
-    	if (Input.GetKey(KeyCode.S)) {
-    		transform.Translate(Vector2.down * speed * Time.deltaTime);
+    	} else if (Input.GetKey(KeyCode.S)) {
+    		//transform.Translate(Vector2.down * speed * Time.deltaTime);
+    		rigidbody2D.velocity = new Vector2(0, -speed);
     		currentState = State.MoveDown;
-    	} 
-    	if (Input.GetKey(KeyCode.A)) {
-    		transform.Translate(Vector2.left * speed * Time.deltaTime);
+    	} else if (Input.GetKey(KeyCode.A)) {
+    		//transform.Translate(Vector2.left * speed * Time.deltaTime);
+    		rigidbody2D.velocity = new Vector2(-speed, 0);
     		currentState = State.MoveLeft;
-    	} 
-    	if (Input.GetKey(KeyCode.D)) {
-    		transform.Translate(Vector2.right * speed * Time.deltaTime);
+    	} else if (Input.GetKey(KeyCode.D)) {
+    		//transform.Translate(Vector2.right * speed * Time.deltaTime);
+    		rigidbody2D.velocity = new Vector2(speed, 0);
     		currentState = State.MoveRight;
+    	} else {
+    		rigidbody2D.velocity = Vector2.zero;
     	}
 
     	if (Input.GetKeyUp(KeyCode.W)) {
@@ -190,7 +195,6 @@ public class Player : MonoBehaviour {
     	} else if (dashTime > 0) {
     		dashTime -= Time.deltaTime;
     	} else if (dashTime <= 0) {
-    		rigidbody2D.velocity = Vector2.zero;
     		dashTime = 0;
     	}
 
