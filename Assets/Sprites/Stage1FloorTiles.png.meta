@@ -17,6 +17,15 @@ TextureImporter:
   - first:
       213: -5927897748438953340
     second: Stage1FloorTiles_4
+  - first:
+      213: -6712016919530963693
+    second: Stage1FloorTiles_5
+  - first:
+      213: -4079480273683625417
+    second: Stage1FloorTiles_6
+  - first:
+      213: 3871304491441215449
+    second: Stage1FloorTiles_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -139,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -151,69 +160,6 @@ TextureImporter:
       bones: []
       spriteID: 240a5dd7b85803b30800000000000000
       internalID: 4265055681277960258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage1FloorTiles_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f46f48d4df3c9d230800000000000000
-      internalID: 3664175264537310799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage1FloorTiles_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3fa9d0212a781de0800000000000000
-      internalID: -1362204604575928518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage1FloorTiles_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4825577b760ebbda0800000000000000
-      internalID: -5927897748438953340
       vertices: []
       indices: 
       edges: []

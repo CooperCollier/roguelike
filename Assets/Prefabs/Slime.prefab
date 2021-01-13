@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1317718694637627980}
   - component: {fileID: 1317718694637627979}
   - component: {fileID: 6831348411176149127}
+  - component: {fileID: 2054291912}
   - component: {fileID: 2088965667341125111}
   m_Layer: 0
   m_Name: Slime
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 293381873
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -7710013449399042405, guid: f00b532aca7b94a9fbcfa8a3c8a473c6,
     type: 3}
@@ -181,6 +182,32 @@ MonoBehaviour:
   maxHealth: 20
   health: 0
   playerLocation: {x: 0, y: 0, z: 0}
+--- !u!61 &2054291912
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317718694637627975}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.054023683}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.27, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.18148279, y: 0.010250092}
+  m_EdgeRadius: 0
 --- !u!58 &2088965667341125111
 CircleCollider2D:
   m_ObjectHideFlags: 0
