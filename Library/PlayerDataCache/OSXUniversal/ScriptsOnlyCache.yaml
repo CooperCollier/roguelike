@@ -6,10 +6,12 @@ ScriptsOnlyBuild:
     - Coffee
     - Coin
     - Fireball
+    - ForceField
     - MagicMissile
     - Menu
     - Player
     - Slime
+    - Spear
     - UIManager
     - Wisp
     Unity.2D.Animation.Editor.dll:
@@ -25,8 +27,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -72,9 +76,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 13668}
+      Script: {instanceID: 13670}
     - Class: 114
-      Script: {instanceID: 14280}
+      Script: {instanceID: 14282}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -147,17 +151,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13202}
     - Class: 114
-      Script: {instanceID: 13336}
+      Script: {instanceID: 13310}
     - Class: 114
-      Script: {instanceID: 13418}
+      Script: {instanceID: 13338}
     - Class: 114
-      Script: {instanceID: 13510}
+      Script: {instanceID: 13420}
     - Class: 114
-      Script: {instanceID: 13668}
+      Script: {instanceID: 13512}
     - Class: 114
-      Script: {instanceID: 14004}
+      Script: {instanceID: 13670}
     - Class: 114
-      Script: {instanceID: 14280}
+      Script: {instanceID: 14006}
+    - Class: 114
+      Script: {instanceID: 14282}
+    - Class: 114
+      Script: {instanceID: 16178}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -331,7 +339,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 7b7391f521a8e70fd7b101320e38deea
+      Hash: 2a15ab024b94eb64dd98e238d854b712
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Fireball
@@ -475,7 +483,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 7b7391f521a8e70fd7b101320e38deea
+      Hash: 7aa3847aa489b42c4b2fbdc2ae3d9d71
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MagicMissile
@@ -541,7 +549,7 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
-      Hash: db23eee3db16ee8e4bd842f0f24659d8
+      Hash: c755e3aab5ceba06988757834641d800
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Slime
@@ -589,7 +597,13 @@ ScriptsOnlyBuild:
     className: GoldApple
   - hash:
       serializedVersion: 2
-      Hash: db23eee3db16ee8e4bd842f0f24659d8
+      Hash: 7aa3847aa489b42c4b2fbdc2ae3d9d71
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ForceField
+  - hash:
+      serializedVersion: 2
+      Hash: c755e3aab5ceba06988757834641d800
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Wisp
@@ -601,7 +615,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 957b440acf3f5cdbf889ecf72858eed2
+      Hash: 1e135420ace8d96d9180139660217abd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -743,6 +757,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 7aa3847aa489b42c4b2fbdc2ae3d9d71
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Spear
   platform: 2
   scenePathNames:
   - Assets/Scenes/Menu.unity

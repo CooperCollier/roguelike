@@ -10,6 +10,10 @@ public class Player : MonoBehaviour {
     public Spell magicMissile;
     [SerializeField]
     public Spell fireball;
+    [SerializeField]
+    public Spell forceField;
+    [SerializeField]
+    public Spell spear;
     // More prefabs for spells here...
 
     Rigidbody2D rigidbody2D;
@@ -86,6 +90,8 @@ public class Player : MonoBehaviour {
 
         spells[0] = magicMissile;
         spells[1] = fireball;
+        spells[2] = forceField;
+        spells[3] = spear;
 
         coffeeActive = false;
 

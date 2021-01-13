@@ -34,12 +34,19 @@ public abstract class Spell : MonoBehaviour {
 
     //--------------------------------------------------------------------------------
 
+    // https://forum.unity.com/threads/rotate-a-2d-object.520750/
+    public static Quaternion LookAt2D(Vector2 forward) {
+        return Quaternion.Euler(0, 0, Mathf.Atan2(forward.y, forward.x) * Mathf.Rad2Deg);
+    }
+
     void Update() {
+
+    	transform.rotation = LookAt2D(direction);
 
     	timeToLive -= Time.deltaTime;
         if (timeToLive <= 0) { Despawn(); }
 
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
         SpecificUpdate();
         
@@ -56,7 +63,7 @@ public abstract class Spell : MonoBehaviour {
     }
 
     public void Despawn() {
-        // Play particle effect
+        // Play particle effect\
         Destroy(gameObject);
     }
 

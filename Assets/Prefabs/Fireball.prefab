@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1652595004143999275}
   m_Layer: 0
   m_Name: Fireball
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  speed: 4
+  speed: 3
   manaCost: 20
   knockback: 1
   maxTimeToLive: 1
