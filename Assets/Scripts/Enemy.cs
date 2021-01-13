@@ -134,7 +134,7 @@ public abstract class Enemy : MonoBehaviour {
 
     //--------------------------------------------------------------------------------
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerStay2D(Collider2D other) {
     	if (other.gameObject.tag == "Enemy") {
     		Vector2 direction = transform.position - other.gameObject.transform.position;
     		transform.Translate(direction.normalized * 0.01f);

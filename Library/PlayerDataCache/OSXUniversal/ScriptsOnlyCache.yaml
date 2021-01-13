@@ -13,7 +13,6 @@ ScriptsOnlyBuild:
     - Slime
     - Spear
     - UIManager
-    - Wisp
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -150,8 +149,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13202}
     - Class: 114
       Script: {instanceID: 13310}
-    - Class: 114
-      Script: {instanceID: 13338}
     - Class: 114
       Script: {instanceID: 13420}
     - Class: 114

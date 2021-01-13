@@ -174,7 +174,7 @@ MonoBehaviour:
   maxWaitTime: 0.1
   waitTime: 0
   coin: {fileID: 3021955428932942146, guid: 088018c991c4040edaacc7ee956a160e, type: 3}
-  speed: 0.5
+  speed: 0.8
   attack: 15
   reward: 3
   aggroRadius: 4
