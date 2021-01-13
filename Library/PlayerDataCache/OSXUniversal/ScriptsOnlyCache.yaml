@@ -16,6 +16,7 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -596,12 +597,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ForceField
-  - hash:
-      serializedVersion: 2
-      Hash: 735e678e25c51bdfd571f2308c42d6c3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Wisp
   - hash:
       serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3

@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 293381873
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7710013449399042405, guid: a1452d966796945eabe9f83b447b3f18,
+  m_Sprite: {fileID: -7710013449399042405, guid: f00b532aca7b94a9fbcfa8a3c8a473c6,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -119,18 +119,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008176833, y: -0.019831743}
+  m_Offset: {x: -0.0003528595, y: -0.04591165}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.27, y: 0.16}
+    oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 0.27, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15492994, y: 0.072513185}
+  m_Size: {x: 0.1184181, y: 0.04933106}
   m_EdgeRadius: 0
 --- !u!50 &1317718694637627979
 Rigidbody2D:
@@ -174,10 +174,10 @@ MonoBehaviour:
   maxWaitTime: 0.1
   waitTime: 0
   coin: {fileID: 3021955428932942146, guid: 088018c991c4040edaacc7ee956a160e, type: 3}
-  speed: 0.8
+  speed: 0.6
   attack: 15
   reward: 3
-  aggroRadius: 4
+  aggroRadius: 3
   maxHealth: 20
   health: 0
   playerLocation: {x: 0, y: 0, z: 0}
@@ -194,6 +194,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003279239, y: 0}
+  m_Offset: {x: -0.003279239, y: -0.025919825}
   serializedVersion: 2
-  m_Radius: 0.21698096
+  m_Radius: 0.1271255

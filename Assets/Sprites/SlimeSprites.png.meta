@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a1452d966796945eabe9f83b447b3f18
+guid: f00b532aca7b94a9fbcfa8a3c8a473c6
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -110,7 +110,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 27
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -129,9 +129,9 @@ TextureImporter:
       name: SlimeSprites_1
       rect:
         serializedVersion: 2
-        x: 27
+        x: 16
         y: 0
-        width: 27
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}

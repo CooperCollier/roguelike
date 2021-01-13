@@ -95,7 +95,7 @@ SpriteRenderer:
   m_SortingLayerID: 293381873
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 547768466590605273, guid: 8d6640926933f45979ac73bf77263bed, type: 3}
+  m_Sprite: {fileID: 547768466590605273, guid: de0933f12879c4bc8b56464a1bddaa04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,4 +153,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6ee8f352f8449d0bff54c1a529eee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: Coin

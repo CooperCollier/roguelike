@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d6640926933f45979ac73bf77263bed
+guid: de0933f12879c4bc8b56464a1bddaa04
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -20,12 +20,6 @@ TextureImporter:
   - first:
       213: -2919979194123914017
     second: CoinSprites_5
-  - first:
-      213: -4571800734245013350
-    second: CoinSprites_6
-  - first:
-      213: -4342342279373665147
-    second: CoinSprites_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -128,8 +122,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 10
-        height: 10
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +141,10 @@ TextureImporter:
       name: CoinSprites_1
       rect:
         serializedVersion: 2
-        x: 10
+        x: 16
         y: 0
-        width: 10
-        height: 10
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +162,10 @@ TextureImporter:
       name: CoinSprites_2
       rect:
         serializedVersion: 2
-        x: 20
+        x: 32
         y: 0
-        width: 10
-        height: 10
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +183,10 @@ TextureImporter:
       name: CoinSprites_3
       rect:
         serializedVersion: 2
-        x: 30
+        x: 48
         y: 0
-        width: 10
-        height: 10
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +204,10 @@ TextureImporter:
       name: CoinSprites_4
       rect:
         serializedVersion: 2
-        x: 40
+        x: 64
         y: 0
-        width: 10
-        height: 10
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +225,10 @@ TextureImporter:
       name: CoinSprites_5
       rect:
         serializedVersion: 2
-        x: 50
+        x: 80
         y: 0
-        width: 10
-        height: 10
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,48 +238,6 @@ TextureImporter:
       bones: []
       spriteID: fd476b6c4662a77d0800000000000000
       internalID: -2919979194123914017
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CoinSprites_6
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a98b4736473bd80c0800000000000000
-      internalID: -4571800734245013350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CoinSprites_7
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58cc5c024b6ecb3c0800000000000000
-      internalID: -4342342279373665147
       vertices: []
       indices: 
       edges: []
