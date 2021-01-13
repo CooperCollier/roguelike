@@ -12,8 +12,11 @@ public abstract class Enemy : MonoBehaviour {
     public float maxDamageTime = 0.1f;
     public float damageTime = 0f;
 
-    public float maxPauseTime = 1f;
+    public float maxPauseTime = 0.25f;
     public float pauseTime = 0f;
+
+    public float maxWaitTime = 0.1f;
+    public float waitTime = 0f;
 
 	public static Player player;
 
@@ -47,6 +50,8 @@ public abstract class Enemy : MonoBehaviour {
     	player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         maxDamageTime = 0.1f;
+        maxPauseTime = 0.25f;
+        maxWaitTime = 0.1f;
 
     	health = maxHealth;
         
@@ -71,6 +76,13 @@ public abstract class Enemy : MonoBehaviour {
         } else if (pauseTime > 0f) {
             pauseTime -= Time.deltaTime;
             return;
+        }
+
+        if (waitTime <= 0f) {
+            waitTime = maxWaitTime;
+            rigidbody2D.velocity = Vector2.zero;
+        } else {
+            waitTime -= Time.deltaTime;
         }
 
         playerLocation = player.ReportLocation();
@@ -118,6 +130,15 @@ public abstract class Enemy : MonoBehaviour {
             collision.gameObject.SendMessage("TakeDamage", attack); // Change This
             pauseTime = maxPauseTime;
         }
+    }
+
+    //--------------------------------------------------------------------------------
+
+    void OnTriggerEnter2D(Collider2D other) {
+    	if (other.gameObject.tag == "Enemy") {
+    		Vector2 direction = transform.position - other.gameObject.transform.position;
+    		transform.Translate(direction.normalized * 0.01f);
+    	}
     }
 
     //--------------------------------------------------------------------------------
