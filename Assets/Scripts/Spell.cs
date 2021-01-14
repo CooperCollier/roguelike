@@ -54,6 +54,8 @@ public abstract class Spell : MonoBehaviour {
 
     public abstract void SpecificUpdate();
 
+    public abstract string GetName();
+
     //--------------------------------------------------------------------------------
 
     public void Attack (GameObject enemy) {
@@ -63,7 +65,7 @@ public abstract class Spell : MonoBehaviour {
     }
 
     public void Despawn() {
-        // Play particle effect\
+        // Play particle effect
         Destroy(gameObject);
     }
 

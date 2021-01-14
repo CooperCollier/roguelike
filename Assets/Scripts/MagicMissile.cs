@@ -10,6 +10,8 @@ public class MagicMissile : Spell {
 
     }
 
+    public override string GetName() { return "MagicMissile"; }
+
     //--------------------------------------------------------------------------------
 
     void OnCollisionEnter2D(Collision2D collision) {

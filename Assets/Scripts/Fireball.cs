@@ -25,6 +25,8 @@ public class Fireball : Spell {
         }
     }
 
+    public override string GetName() { return "Fireball"; }
+
     //--------------------------------------------------------------------------------
 
     void OnCollisionEnter2D(Collision2D collision) {

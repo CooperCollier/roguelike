@@ -12,6 +12,8 @@ public class Spear : Spell {
 
     }
 
+    public override string GetName() { return "Spear"; }
+
     //--------------------------------------------------------------------------------
 
     void OnCollisionEnter2D(Collision2D collision) {

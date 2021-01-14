@@ -14,6 +14,8 @@ public class Slime : Enemy {
 
     }
 
+    //--------------------------------------------------------------------------------
+
     public override void Move() {
 
     	Vector3 direction = playerLocation - transform.position;
@@ -22,9 +24,14 @@ public class Slime : Enemy {
 
     }
 
-    public override void Attack() {
+    //--------------------------------------------------------------------------------
 
+    public override void Attack() {
+    	player.SendMessage("TakeDamage", attack); // Change This
+        pauseTime = maxPauseTime;
     }
+
+    //--------------------------------------------------------------------------------
 
     public override void UpdateAnimation() {
 
@@ -40,6 +47,14 @@ public class Slime : Enemy {
             animator.Play(stateName, 0);
         }
 
+    }
+
+    //--------------------------------------------------------------------------------
+
+    void OnCollisionStay2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Player") {
+        	Attack();
+        }
     }
 
     //--------------------------------------------------------------------------------

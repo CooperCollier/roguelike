@@ -20,6 +20,8 @@ public class ForceField : Spell {
         
     }
 
+    public override string GetName() { return "ForceField"; }
+
     //--------------------------------------------------------------------------------
 
     void OnCollisionEnter2D(Collision2D collision) {

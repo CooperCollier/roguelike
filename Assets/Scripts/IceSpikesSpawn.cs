@@ -42,6 +42,8 @@ public class IceSpikesSpawn : Spell {
 
     }
 
+    public override string GetName() { return "IceSpikes"; }
+
     //--------------------------------------------------------------------------------
 
 }

@@ -12,12 +12,14 @@ ScriptsOnlyBuild:
     - MagicMissile
     - Menu
     - Player
+    - Scroll
     - Slime
     - Spear
     - UIManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -65,19 +67,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11170}
     - Class: 114
-      Script: {instanceID: 11462}
+      Script: {instanceID: 11464}
     - Class: 114
-      Script: {instanceID: 11516}
+      Script: {instanceID: 11518}
     - Class: 114
-      Script: {instanceID: 12184}
+      Script: {instanceID: 12186}
     - Class: 114
-      Script: {instanceID: 12816}
+      Script: {instanceID: 12818}
     - Class: 114
-      Script: {instanceID: 12894}
+      Script: {instanceID: 12896}
     - Class: 114
-      Script: {instanceID: 13672}
+      Script: {instanceID: 13674}
     - Class: 114
-      Script: {instanceID: 14284}
+      Script: {instanceID: 14286}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -132,43 +134,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11170}
     - Class: 114
-      Script: {instanceID: 11462}
+      Script: {instanceID: 11374}
     - Class: 114
-      Script: {instanceID: 11516}
+      Script: {instanceID: 11464}
     - Class: 114
-      Script: {instanceID: 11796}
+      Script: {instanceID: 11518}
     - Class: 114
-      Script: {instanceID: 11904}
+      Script: {instanceID: 11798}
     - Class: 114
-      Script: {instanceID: 11984}
+      Script: {instanceID: 11906}
     - Class: 114
-      Script: {instanceID: 12184}
+      Script: {instanceID: 11986}
     - Class: 114
-      Script: {instanceID: 12432}
+      Script: {instanceID: 12186}
     - Class: 114
-      Script: {instanceID: 12722}
+      Script: {instanceID: 12434}
     - Class: 114
-      Script: {instanceID: 12894}
+      Script: {instanceID: 12724}
     - Class: 114
-      Script: {instanceID: 13202}
+      Script: {instanceID: 12896}
     - Class: 114
-      Script: {instanceID: 13308}
+      Script: {instanceID: 13204}
     - Class: 114
-      Script: {instanceID: 13312}
+      Script: {instanceID: 13310}
     - Class: 114
-      Script: {instanceID: 13420}
+      Script: {instanceID: 13314}
     - Class: 114
-      Script: {instanceID: 13498}
+      Script: {instanceID: 13422}
     - Class: 114
-      Script: {instanceID: 13514}
+      Script: {instanceID: 13500}
     - Class: 114
-      Script: {instanceID: 13672}
+      Script: {instanceID: 13516}
     - Class: 114
-      Script: {instanceID: 14008}
+      Script: {instanceID: 13674}
     - Class: 114
-      Script: {instanceID: 14284}
+      Script: {instanceID: 14010}
     - Class: 114
-      Script: {instanceID: 15640}
+      Script: {instanceID: 14286}
+    - Class: 114
+      Script: {instanceID: 15628}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -238,6 +242,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayerQuitHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 200926d4a7ca9c5c4fe8ab4850ccb37c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IceSpikesSpawn
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -768,10 +778,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 200926d4a7ca9c5c4fe8ab4850ccb37c
+      Hash: 3fee4e136f04e6018cc7345a179f44be
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: IceSpikesSpawn
+    className: Scroll
   platform: 2
   scenePathNames:
   - Assets/Scenes/Menu.unity

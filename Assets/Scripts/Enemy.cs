@@ -97,6 +97,8 @@ public abstract class Enemy : MonoBehaviour {
         
     }
 
+    //--------------------------------------------------------------------------------
+
     public abstract void SpecificUpdate();
 
     public abstract void Move();
@@ -116,6 +118,8 @@ public abstract class Enemy : MonoBehaviour {
 
     }
 
+    //--------------------------------------------------------------------------------
+
     public void Despawn() {
     	// Play death animation
     	for (int i = 0; i < reward; i += 1) { 
@@ -125,17 +129,10 @@ public abstract class Enemy : MonoBehaviour {
     	Destroy(gameObject);
     }
 
-    public void Push(Vector2 direction) {
-        rigidbody2D.AddForce(direction, ForceMode2D.Impulse);
-    }
-
     //--------------------------------------------------------------------------------
 
-    void OnCollisionStay2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Player") {
-            collision.gameObject.SendMessage("TakeDamage", attack); // Change This
-            pauseTime = maxPauseTime;
-        }
+    public void Push(Vector2 direction) {
+        rigidbody2D.AddForce(direction, ForceMode2D.Impulse);
     }
 
     //--------------------------------------------------------------------------------

@@ -10,6 +10,8 @@ public class IceSpikes : Spell {
 
     }
 
+    public override string GetName() { return "IceSpikes"; }
+
     //--------------------------------------------------------------------------------
 
     void OnCollisionEnter2D(Collision2D collision) {

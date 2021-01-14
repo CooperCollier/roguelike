@@ -91,9 +91,9 @@ public class Player : MonoBehaviour {
     	currentState = State.IdleRight;
 
         spells[0] = magicMissile;
-        spells[1] = fireball;
-        spells[2] = forceField;
-        spells[3] = iceSpikesSpawn;
+        spells[1] = null;
+        spells[2] = null;
+        spells[3] = null;
 
         coffeeActive = false;
 
@@ -343,6 +343,9 @@ public class Player : MonoBehaviour {
             if (item.GetItemType() == "Book") {
                 GetBook();
             }
+            if (item.GetItemType() == "Scroll") {
+                GetScroll(((Scroll) item).GetSpell());
+            }
 
             Destroy(collision.gameObject);
 
@@ -383,6 +386,27 @@ public class Player : MonoBehaviour {
         dashSpeed /= 1.5f;
         manaRecoveryRate /= 2f;
         
+    }
+
+    public void GetScroll(Spell spell) {
+
+        for (int i = 0; i < spells.Length; i += 1) {
+            if (spells[i] == null) {
+                continue;
+            } else if (spells[i].GetName() == spell.GetName()) {
+                return;
+            }
+        }
+
+        for (int i = 0; i < spells.Length; i += 1) {
+            if (spells[i] == null) {
+                spells[i] = spell;
+                return;
+            }
+        }
+
+        Debug.Log("Not enough space for spell");
+
     }
 
     //--------------------------------------------------------------------------------
