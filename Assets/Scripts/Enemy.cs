@@ -8,6 +8,7 @@ public abstract class Enemy : MonoBehaviour {
 
     public SpriteRenderer spriteRenderer;
     public Rigidbody2D rigidbody2D;
+    public Animator animator;
 
     public float maxDamageTime = 0.1f;
     public float damageTime = 0f;
@@ -38,6 +39,8 @@ public abstract class Enemy : MonoBehaviour {
     public int maxHealth;
     public int health;
 
+    public string currentState;
+
     public Vector3 playerLocation;
 
     //--------------------------------------------------------------------------------
@@ -46,6 +49,7 @@ public abstract class Enemy : MonoBehaviour {
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
     	player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
@@ -98,6 +102,8 @@ public abstract class Enemy : MonoBehaviour {
     public abstract void Move();
 
     public abstract void Attack();
+
+    public abstract void UpdateAnimation();
 
     //--------------------------------------------------------------------------------
 

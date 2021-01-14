@@ -10,6 +10,8 @@ public class Slime : Enemy {
 
     	Move();
 
+        UpdateAnimation();
+
     }
 
     public override void Move() {
@@ -21,6 +23,22 @@ public class Slime : Enemy {
     }
 
     public override void Attack() {
+
+    }
+
+    public override void UpdateAnimation() {
+
+        if (rigidbody2D.velocity.x <= 0) {
+            currentState = "Left";
+        } else {
+            currentState = "Right";
+        }
+
+        string stateName = "Slime" + currentState;
+
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName(stateName)) {
+            animator.Play(stateName, 0);
+        }
 
     }
 

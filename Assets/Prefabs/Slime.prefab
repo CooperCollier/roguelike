@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
   rigidbody2D: {fileID: 0}
+  animator: {fileID: 0}
   maxDamageTime: 0.1
   damageTime: 0
   maxPauseTime: 1.5
@@ -180,6 +181,7 @@ MonoBehaviour:
   aggroRadius: 3
   maxHealth: 20
   health: 0
+  currentState: 
   playerLocation: {x: 0, y: 0, z: 0}
 --- !u!58 &2088965667341125111
 CircleCollider2D:
@@ -194,6 +196,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.002227597, y: -0.031879142}
+  m_Offset: {x: -0.0046761855, y: -0.029080749}
   serializedVersion: 2
-  m_Radius: 0.09207093
+  m_Radius: 0.06583605
