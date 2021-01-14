@@ -26,10 +26,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -596,7 +594,7 @@ ScriptsOnlyBuild:
     className: GoldApple
   - hash:
       serializedVersion: 2
-      Hash: 7aa3847aa489b42c4b2fbdc2ae3d9d71
+      Hash: 29f238858030a0e278a413fd09f75cab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ForceField

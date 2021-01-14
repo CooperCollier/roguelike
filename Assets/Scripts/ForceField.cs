@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class ForceField : Spell {
 
+	//--------------------------------------------------------------------------------
+
+	public float growthSpeed;
+
     //--------------------------------------------------------------------------------
 
     public override void SpecificUpdate() {
 
+    	growthSpeed = 15f;
+
     	direction = Vector2.zero;
 
-    	// expand outward by a small amount each frame
+    	transform.localScale += new Vector3(growthSpeed * Time.deltaTime, growthSpeed * Time.deltaTime, 0);
         
     }
 
@@ -22,6 +28,8 @@ public class ForceField : Spell {
             return;
         } else if (collision.gameObject.tag == "Enemy") { 
         	Attack(collision.gameObject); 
+        } else {
+        	Despawn();
         }
 
     }

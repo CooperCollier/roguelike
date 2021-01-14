@@ -232,9 +232,9 @@ public class Player : MonoBehaviour {
 
             Spell newSpell = (Spell) Instantiate(spells[selectedSpell]);
 
-            Vector3 offset = attkDirection * 0.1f;
+            // Vector3 offset = attkDirection * 0.1f;
 
-            newSpell.GetComponent<Transform>().position = transform.position + offset;
+            newSpell.GetComponent<Transform>().position = transform.position; // + offset;
             newSpell.direction = attkDirection;
 
     	} else if (attkTime > 0) {

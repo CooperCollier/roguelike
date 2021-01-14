@@ -16,7 +16,7 @@ public abstract class Enemy : MonoBehaviour {
     public float maxPauseTime = 0.25f;
     public float pauseTime = 0f;
 
-    public float maxWaitTime = 0.1f;
+    public float maxWaitTime = 1f;
     public float waitTime = 0f;
 
 	public static Player player;
@@ -84,7 +84,7 @@ public abstract class Enemy : MonoBehaviour {
 
         if (waitTime <= 0f) {
             waitTime = maxWaitTime;
-            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.velocity /= 2f;
         } else {
             waitTime -= Time.deltaTime;
         }
