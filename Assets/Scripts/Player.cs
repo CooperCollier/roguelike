@@ -14,6 +14,8 @@ public class Player : MonoBehaviour {
     public Spell forceField;
     [SerializeField]
     public Spell spear;
+    [SerializeField]
+    public Spell iceSpikesSpawn;
     // More prefabs for spells here...
 
     Rigidbody2D rigidbody2D;
@@ -91,7 +93,7 @@ public class Player : MonoBehaviour {
         spells[0] = magicMissile;
         spells[1] = fireball;
         spells[2] = forceField;
-        spells[3] = spear;
+        spells[3] = iceSpikesSpawn;
 
         coffeeActive = false;
 
@@ -131,19 +133,15 @@ public class Player : MonoBehaviour {
     	if (dashTime > 0) { return; }
 
     	if (Input.GetKey(KeyCode.W)) {
-    		//transform.Translate(Vector2.up * speed * Time.deltaTime);
     		rigidbody2D.velocity = new Vector2(0, speed);
     		currentState = State.MoveUp;
     	} else if (Input.GetKey(KeyCode.S)) {
-    		//transform.Translate(Vector2.down * speed * Time.deltaTime);
     		rigidbody2D.velocity = new Vector2(0, -speed);
     		currentState = State.MoveDown;
     	} else if (Input.GetKey(KeyCode.A)) {
-    		//transform.Translate(Vector2.left * speed * Time.deltaTime);
     		rigidbody2D.velocity = new Vector2(-speed, 0);
     		currentState = State.MoveLeft;
     	} else if (Input.GetKey(KeyCode.D)) {
-    		//transform.Translate(Vector2.right * speed * Time.deltaTime);
     		rigidbody2D.velocity = new Vector2(speed, 0);
     		currentState = State.MoveRight;
     	} else {
@@ -232,9 +230,7 @@ public class Player : MonoBehaviour {
 
             Spell newSpell = (Spell) Instantiate(spells[selectedSpell]);
 
-            // Vector3 offset = attkDirection * 0.1f;
-
-            newSpell.GetComponent<Transform>().position = transform.position; // + offset;
+            newSpell.GetComponent<Transform>().position = transform.position;
             newSpell.direction = attkDirection;
 
     	} else if (attkTime > 0) {

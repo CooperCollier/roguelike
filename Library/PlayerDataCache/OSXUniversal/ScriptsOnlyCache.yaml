@@ -7,6 +7,8 @@ ScriptsOnlyBuild:
     - Coin
     - Fireball
     - ForceField
+    - IceSpikes
+    - IceSpikesSpawn
     - MagicMissile
     - Menu
     - Player
@@ -73,9 +75,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 13670}
+      Script: {instanceID: 13672}
     - Class: 114
-      Script: {instanceID: 14282}
+      Script: {instanceID: 14284}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -150,19 +152,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13202}
     - Class: 114
-      Script: {instanceID: 13310}
+      Script: {instanceID: 13308}
     - Class: 114
-      Script: {instanceID: 13418}
+      Script: {instanceID: 13312}
     - Class: 114
-      Script: {instanceID: 13496}
+      Script: {instanceID: 13420}
     - Class: 114
-      Script: {instanceID: 13512}
+      Script: {instanceID: 13498}
     - Class: 114
-      Script: {instanceID: 13670}
+      Script: {instanceID: 13514}
     - Class: 114
-      Script: {instanceID: 14006}
+      Script: {instanceID: 13672}
     - Class: 114
-      Script: {instanceID: 14282}
+      Script: {instanceID: 14008}
+    - Class: 114
+      Script: {instanceID: 14284}
+    - Class: 114
+      Script: {instanceID: 15640}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -594,6 +600,12 @@ ScriptsOnlyBuild:
     className: GoldApple
   - hash:
       serializedVersion: 2
+      Hash: 7aa3847aa489b42c4b2fbdc2ae3d9d71
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IceSpikes
+  - hash:
+      serializedVersion: 2
       Hash: 29f238858030a0e278a413fd09f75cab
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -606,7 +618,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 1e135420ace8d96d9180139660217abd
+      Hash: 72ebe6e213b34817e6cca53e3020ccd5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -754,6 +766,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 200926d4a7ca9c5c4fe8ab4850ccb37c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IceSpikesSpawn
   platform: 2
   scenePathNames:
   - Assets/Scenes/Menu.unity
