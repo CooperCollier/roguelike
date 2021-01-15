@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Apple
+    - Bone
     - CameraFollow
     - Coffee
     - Coin
@@ -13,6 +14,7 @@ ScriptsOnlyBuild:
     - Menu
     - Player
     - Scroll
+    - Skeleton
     - Slime
     - Spear
     - UIManager
@@ -71,15 +73,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11518}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12188}
     - Class: 114
-      Script: {instanceID: 12818}
+      Script: {instanceID: 12820}
     - Class: 114
-      Script: {instanceID: 12896}
+      Script: {instanceID: 12898}
     - Class: 114
-      Script: {instanceID: 13674}
+      Script: {instanceID: 13676}
     - Class: 114
-      Script: {instanceID: 14286}
+      Script: {instanceID: 14290}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -144,35 +146,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11906}
     - Class: 114
-      Script: {instanceID: 11986}
+      Script: {instanceID: 11910}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 11988}
     - Class: 114
-      Script: {instanceID: 12434}
+      Script: {instanceID: 12188}
     - Class: 114
-      Script: {instanceID: 12724}
+      Script: {instanceID: 12436}
     - Class: 114
-      Script: {instanceID: 12896}
+      Script: {instanceID: 12726}
     - Class: 114
-      Script: {instanceID: 13204}
+      Script: {instanceID: 12898}
     - Class: 114
-      Script: {instanceID: 13310}
+      Script: {instanceID: 13206}
     - Class: 114
-      Script: {instanceID: 13314}
+      Script: {instanceID: 13312}
     - Class: 114
-      Script: {instanceID: 13422}
+      Script: {instanceID: 13316}
     - Class: 114
-      Script: {instanceID: 13500}
+      Script: {instanceID: 13424}
     - Class: 114
-      Script: {instanceID: 13516}
+      Script: {instanceID: 13502}
     - Class: 114
-      Script: {instanceID: 13674}
+      Script: {instanceID: 13518}
     - Class: 114
-      Script: {instanceID: 14010}
+      Script: {instanceID: 13676}
     - Class: 114
-      Script: {instanceID: 14286}
+      Script: {instanceID: 13792}
     - Class: 114
-      Script: {instanceID: 15628}
+      Script: {instanceID: 14014}
+    - Class: 114
+      Script: {instanceID: 14290}
+    - Class: 114
+      Script: {instanceID: 19940}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -398,6 +404,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager
+  - hash:
+      serializedVersion: 2
+      Hash: 3fee4e136f04e6018cc7345a179f44be
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Scroll
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -670,6 +682,12 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 707cd8e9cee16eed9c7f9ac982639e18
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Skeleton
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -778,10 +796,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 3fee4e136f04e6018cc7345a179f44be
+      Hash: 297ba45857baf8fbd68df8289030c1e4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Scroll
+    className: Bone
   platform: 2
   scenePathNames:
   - Assets/Scenes/Menu.unity
