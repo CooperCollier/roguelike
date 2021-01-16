@@ -40,7 +40,7 @@ public abstract class EnemyProjectile : MonoBehaviour {
     	timeToLive -= Time.deltaTime;
         if (timeToLive <= 0) { Despawn(); }
 
-        transform.Translate(direction * speed * Time.deltaTime, Space.World);
+        transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
 
         SpecificUpdate();
         

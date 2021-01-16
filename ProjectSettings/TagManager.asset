@@ -19,7 +19,7 @@ TagManager:
   - EnemyAvoid
   - Spell
   - Player
-  - 
+  - Wall
   - 
   - 
   - 
@@ -47,12 +47,9 @@ TagManager:
   - name: Floor
     uniqueID: 3195490291
     locked: 0
-  - name: WallsBack
+  - name: Walls
     uniqueID: 1348074691
     locked: 0
   - name: Player
     uniqueID: 293381873
-    locked: 0
-  - name: WallsFront
-    uniqueID: 2829750027
     locked: 0

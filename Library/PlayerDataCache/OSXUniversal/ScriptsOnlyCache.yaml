@@ -6,6 +6,8 @@ ScriptsOnlyBuild:
     - CameraFollow
     - Coffee
     - Coin
+    - Cultist
+    - CultistProjectile
     - Fireball
     - ForceField
     - IceSpikes
@@ -67,11 +69,11 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11170}
+      Script: {instanceID: 11148}
     - Class: 114
-      Script: {instanceID: 11464}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11518}
+      Script: {instanceID: 11466}
     - Class: 114
       Script: {instanceID: 12188}
     - Class: 114
@@ -79,9 +81,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12898}
     - Class: 114
-      Script: {instanceID: 13676}
+      Script: {instanceID: 13680}
     - Class: 114
-      Script: {instanceID: 14290}
+      Script: {instanceID: 14298}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -134,13 +136,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11148}
     - Class: 114
-      Script: {instanceID: 11170}
+      Script: {instanceID: 11150}
     - Class: 114
-      Script: {instanceID: 11374}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11464}
+      Script: {instanceID: 11376}
     - Class: 114
-      Script: {instanceID: 11518}
+      Script: {instanceID: 11466}
     - Class: 114
       Script: {instanceID: 11798}
     - Class: 114
@@ -158,27 +160,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12898}
     - Class: 114
-      Script: {instanceID: 13206}
+      Script: {instanceID: 12964}
     - Class: 114
-      Script: {instanceID: 13312}
+      Script: {instanceID: 13026}
+    - Class: 114
+      Script: {instanceID: 13210}
     - Class: 114
       Script: {instanceID: 13316}
     - Class: 114
-      Script: {instanceID: 13424}
+      Script: {instanceID: 13320}
     - Class: 114
-      Script: {instanceID: 13502}
+      Script: {instanceID: 13428}
     - Class: 114
-      Script: {instanceID: 13518}
+      Script: {instanceID: 13506}
     - Class: 114
-      Script: {instanceID: 13676}
+      Script: {instanceID: 13522}
     - Class: 114
-      Script: {instanceID: 13792}
+      Script: {instanceID: 13680}
     - Class: 114
-      Script: {instanceID: 14014}
+      Script: {instanceID: 13798}
     - Class: 114
-      Script: {instanceID: 14290}
+      Script: {instanceID: 14020}
     - Class: 114
-      Script: {instanceID: 19940}
+      Script: {instanceID: 14040}
+    - Class: 114
+      Script: {instanceID: 14298}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -206,6 +212,12 @@ ScriptsOnlyBuild:
     - Class: 1839735485
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
   - hash:
       serializedVersion: 2
       Hash: 7072231382eb3c4871b3dd75ad0227e1
@@ -290,12 +302,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 89f9a1b4c64db9559e39f4a2e3bfaadd
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -550,6 +556,18 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 39debbdc8aacac4c0b9b5f96e6fa6318
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Cultist
+  - hash:
+      serializedVersion: 2
+      Hash: 297ba45857baf8fbd68df8289030c1e4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Bone
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -706,6 +724,12 @@ ScriptsOnlyBuild:
     className: Apple
   - hash:
       serializedVersion: 2
+      Hash: 297ba45857baf8fbd68df8289030c1e4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CultistProjectile
+  - hash:
+      serializedVersion: 2
       Hash: 8cd1cbba27f3cb1717254f668e9e0d5a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -794,12 +818,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 297ba45857baf8fbd68df8289030c1e4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Bone
   platform: 2
   scenePathNames:
   - Assets/Scenes/Menu.unity
