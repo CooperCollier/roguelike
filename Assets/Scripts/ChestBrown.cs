@@ -6,24 +6,30 @@ public class ChestBrown : Chest {
 
     //--------------------------------------------------------------------------------
 
-    void Start() {
-        
-    }
+    public override void UpdateAnimation() {
 
-    //--------------------------------------------------------------------------------
+        string animationName;
 
-    void Update() {
-        
+        if (opened) {
+            animationName = "ChestBrownOpen";
+        } else {
+            animationName = "ChestBrownClosed";
+        }
+
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName(animationName)) {
+            animator.Play(animationName, 0);
+        }
+
     }
 
     //--------------------------------------------------------------------------------
 
     public override int GenerateCoins() {
-    	return Random.Range(10, 15);
+    	return Random.Range(5, 15);
     }
 
     public override int GenerateApples() {
-    	if (Random.value > 0.5f) {
+    	if (Random.value > 0.6f) {
     		return 1;
     	} else {
     		return 0;
@@ -31,14 +37,14 @@ public class ChestBrown : Chest {
     }
 
     public override bool GenerateCoffee() {
-    	if (Random.value > 0.75f) {
+    	if (Random.value > 0.9f) {
     		return true;
     	} else {
     		return false;
     	}
     }
 
-    public override bool GenerateGoldenApple() {
+    public override bool GenerateGoldApple() {
     	return false;
     }
 

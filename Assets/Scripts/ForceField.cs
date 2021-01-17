@@ -26,15 +26,10 @@ public class ForceField : Spell {
 
     void OnCollisionEnter2D(Collision2D collision) {
 
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Item" 
-            || collision.gameObject.tag == "Spell" || collision.gameObject.tag == "Wall" ) {
-            return;
-        } else if (collision.gameObject.tag == "Enemy") { 
+        if (collision.gameObject.tag == "Enemy") { 
         	Attack(collision.gameObject); 
         } else if (collision.gameObject.tag == "EnemyProjectile") {
             Destroy(collision.gameObject);
-        } else {
-        	Despawn();
         }
 
     }

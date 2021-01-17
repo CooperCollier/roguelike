@@ -144,6 +144,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac62b616858a466e9b8c531a0fdf2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireball: {fileID: 5865726574738730090, guid: 823b85d17a2214d3a9c6d2a3c71d29b7,
+    type: 3}
+  forceField: {fileID: 562006778457701635, guid: 6ddbd926960a24a49b4f3856917c9fd0,
+    type: 3}
+  spear: {fileID: 5059124380305417994, guid: ac88f0aa4d61c4a7ab5f1cd73f955ce9, type: 3}
+  iceSpikesSpawn: {fileID: -573230147442772970, guid: 9a6d244b22268439abfbc980b52590e1,
+    type: 3}
+  coin: {fileID: 3021955428932942146, guid: 088018c991c4040edaacc7ee956a160e, type: 3}
+  apple: {fileID: 3680088518965939958, guid: 2a6b79674746a48cab45e7c68f1d0dfd, type: 3}
+  goldApple: {fileID: 6893329777292696454, guid: 2630604c475f94e2d9402314e18b8872,
+    type: 3}
+  book: {fileID: 7405328692103158239, guid: d2baace31bae64e938e2411157b37001, type: 3}
+  coffee: {fileID: 9016001200074421038, guid: 8abd40230f1ab4694a605681e9c159e1, type: 3}
+  scroll: {fileID: 5699568063507410227, guid: 5b126de9ad57d4759b1718f0db73df9c, type: 3}
+  animator: {fileID: 0}
+  opened: 0
 --- !u!95 &2714280709342629536
 Animator:
   serializedVersion: 3

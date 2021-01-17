@@ -374,18 +374,16 @@ public class Player : MonoBehaviour {
 
     public void StartCoffee() {
         coffeeActive = true;
-        speed *= 1.5f;
-        dashSpeed *= 1.5f;
+        speed *= 1.3f;
+        dashSpeed *= 1.3f;
         manaRecoveryRate *= 2f;
     }
 
     public void EndCoffee() {
-
         coffeeActive = false;
-        speed /= 1.5f;
-        dashSpeed /= 1.5f;
+        speed /= 1.3f;
+        dashSpeed /= 1.3f;
         manaRecoveryRate /= 2f;
-        
     }
 
     public void GetScroll(Spell spell) {

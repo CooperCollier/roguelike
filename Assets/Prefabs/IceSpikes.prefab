@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1587709a91a204cdd9c8ea1d6361a4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 8
   speed: 2.5
   manaCost: 15
   knockback: 5

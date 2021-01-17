@@ -144,6 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  speed: 1.2
+  speed: 1
   maxTimeToLive: 10
   direction: {x: 0, y: 0}
