@@ -31,7 +31,8 @@ public class Fireball : Spell {
 
     void OnCollisionEnter2D(Collision2D collision) {
 
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Item") {
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Item"
+         || collision.gameObject.tag == "Spell" || collision.gameObject.tag == "EnemyProjectile") {
             return;
         }
 

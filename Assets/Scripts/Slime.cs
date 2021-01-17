@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Slime : Enemy {
 
+	//--------------------------------------------------------------------------------
+
+	public float attackTime = 0.2f;
+
     //--------------------------------------------------------------------------------
 
     public override void SpecificUpdate() {
@@ -53,7 +57,12 @@ public class Slime : Enemy {
 
     void OnCollisionStay2D(Collision2D collision) {
         if (collision.gameObject.tag == "Player") {
-        	Attack();
+        	if (attackTime <= 0) {
+        		Attack();
+        		attackTime = 0.3f;
+        	} else {
+        		attackTime -= Time.deltaTime;
+        	}
         }
     }
 

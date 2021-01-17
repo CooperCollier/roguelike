@@ -61,4 +61,17 @@ public abstract class EnemyProjectile : MonoBehaviour {
 
     //--------------------------------------------------------------------------------
 
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Item"
+         || collision.gameObject.tag == "Spell" || collision.gameObject.tag == "EnemyProjectile") {
+            return;
+        } else if (collision.gameObject.tag == "Player") {
+            Attack(collision.gameObject);
+        } else {
+            Despawn();
+        }
+    }
+
+    //--------------------------------------------------------------------------------
+
 }

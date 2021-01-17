@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Item
   - Spell
+  - EnemyProjectile
+  - Wall
+  - Environment
   layers:
   - Default
   - TransparentFX

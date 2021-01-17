@@ -30,8 +30,6 @@ public class Skeleton : Enemy {
     		attackTimer -= Time.deltaTime;
     	}
 
-    	Debug.Log(rigidbody2D.velocity);
-
 	}
 
 	//--------------------------------------------------------------------------------
