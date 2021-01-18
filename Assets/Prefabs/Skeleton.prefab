@@ -157,7 +157,7 @@ MonoBehaviour:
   speed: 0.6
   attack: 15
   reward: 5
-  aggroRadius: 3
+  aggroRadius: 2
   maxHealth: 30
   health: 0
   currentState: 

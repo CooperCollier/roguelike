@@ -155,15 +155,18 @@ MonoBehaviour:
   maxWaitTime: 1
   waitTime: 0
   coin: {fileID: 3021955428932942146, guid: 088018c991c4040edaacc7ee956a160e, type: 3}
-  speed: 1.5
+  speed: 0.8
   attack: 15
   reward: 5
-  aggroRadius: 3
+  aggroRadius: 2
   maxHealth: 40
   health: 0
   currentState: 
   playerLocation: {x: 0, y: 0, z: 0}
   attackTime: 0.2
+  jumping: 0
+  walkDestination: {x: 0, y: 0, z: 0}
+  jumpDestination: {x: 0, y: 0, z: 0}
 --- !u!95 &7673728441397444873
 Animator:
   serializedVersion: 3
