@@ -338,7 +338,7 @@ public class Player : MonoBehaviour {
                 GetGoldApple();
             }
             if (item.GetItemType() == "Coffee") {
-                if (!coffee) { StartCoffee(); }
+                if (!coffeeActive) { StartCoffee(); }
             }
             if (item.GetItemType() == "Book") {
                 GetBook();

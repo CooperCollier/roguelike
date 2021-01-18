@@ -7,16 +7,6 @@ public abstract class Chest : MonoBehaviour {
 	//--------------------------------------------------------------------------------
 
     [SerializeField]
-    public Spell fireball;
-    [SerializeField]
-    public Spell forceField;
-    [SerializeField]
-    public Spell spear;
-    [SerializeField]
-    public Spell iceSpikesSpawn;
-    // More prefabs for spells here...
-
-    [SerializeField]
     public Coin coin;
     [SerializeField]
     public Apple apple;
@@ -35,8 +25,6 @@ public abstract class Chest : MonoBehaviour {
 
 	public bool opened;
 
-	public static Spell[] spells = { null, null, null, null };
-
     //--------------------------------------------------------------------------------
 
     void Start() { 
@@ -44,11 +32,6 @@ public abstract class Chest : MonoBehaviour {
     	opened = false;
 
     	animator = GetComponent<Animator>();
-
-    	spells[0] = fireball;
-        spells[1] = forceField;
-        spells[2] = spear;
-        spells[3] = iceSpikesSpawn;
 
     }
 
@@ -101,7 +84,7 @@ public abstract class Chest : MonoBehaviour {
     	}
 
     	if (GenerateScroll()) {
-    		Spell newSpell = spells[Random.Range(0, 3)];
+    		Spell newSpell = GenerateScroll();
     		Scroll newScroll = Instantiate(scroll);
     		newScroll.spell = newSpell;
     		newScroll.transform.position = transform.position + 

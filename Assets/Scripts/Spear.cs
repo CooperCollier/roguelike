@@ -27,6 +27,12 @@ public class Spear : Spell {
             } else {
             	collisions -= 1;
             }
+        } else if (collision.gameObject.tag == "Environment") {
+            if (collisions == 0) {
+                Despawn();
+            } else {
+                collisions -= 1;
+            }
         } else {
         	Despawn();
         }

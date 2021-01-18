@@ -67,6 +67,7 @@ public abstract class EnemyProjectile : MonoBehaviour {
             return;
         } else if (collision.gameObject.tag == "Player") {
             Attack(collision.gameObject);
+            Despawn();
         } else {
             Despawn();
         }

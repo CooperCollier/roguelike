@@ -5,8 +5,10 @@ ScriptsOnlyBuild:
     - Bone
     - Book
     - CameraFollow
+    - ChestBlue
     - ChestBrown
     - ChestGold
+    - ChestRed
     - Coffee
     - Coin
     - Cultist
@@ -76,17 +78,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11468}
+      Script: {instanceID: 11470}
     - Class: 114
-      Script: {instanceID: 12192}
+      Script: {instanceID: 12196}
     - Class: 114
-      Script: {instanceID: 12824}
+      Script: {instanceID: 12828}
     - Class: 114
-      Script: {instanceID: 12902}
+      Script: {instanceID: 12906}
     - Class: 114
-      Script: {instanceID: 13684}
+      Script: {instanceID: 13688}
     - Class: 114
-      Script: {instanceID: 14302}
+      Script: {instanceID: 14306}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -143,59 +145,63 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11376}
+      Script: {instanceID: 11178}
     - Class: 114
-      Script: {instanceID: 11426}
+      Script: {instanceID: 11378}
     - Class: 114
-      Script: {instanceID: 11468}
+      Script: {instanceID: 11428}
     - Class: 114
-      Script: {instanceID: 11800}
+      Script: {instanceID: 11470}
     - Class: 114
-      Script: {instanceID: 11910}
+      Script: {instanceID: 11802}
+    - Class: 114
+      Script: {instanceID: 11870}
     - Class: 114
       Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 11992}
+      Script: {instanceID: 11918}
     - Class: 114
-      Script: {instanceID: 12192}
+      Script: {instanceID: 11996}
     - Class: 114
-      Script: {instanceID: 12440}
+      Script: {instanceID: 12196}
     - Class: 114
-      Script: {instanceID: 12730}
+      Script: {instanceID: 12444}
     - Class: 114
-      Script: {instanceID: 12902}
+      Script: {instanceID: 12734}
     - Class: 114
-      Script: {instanceID: 12918}
+      Script: {instanceID: 12906}
     - Class: 114
-      Script: {instanceID: 12968}
+      Script: {instanceID: 12922}
     - Class: 114
-      Script: {instanceID: 13030}
+      Script: {instanceID: 12972}
     - Class: 114
-      Script: {instanceID: 13214}
+      Script: {instanceID: 13034}
     - Class: 114
-      Script: {instanceID: 13284}
+      Script: {instanceID: 13218}
     - Class: 114
-      Script: {instanceID: 13320}
+      Script: {instanceID: 13288}
     - Class: 114
       Script: {instanceID: 13324}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13328}
     - Class: 114
-      Script: {instanceID: 13510}
+      Script: {instanceID: 13436}
     - Class: 114
-      Script: {instanceID: 13526}
+      Script: {instanceID: 13514}
     - Class: 114
-      Script: {instanceID: 13684}
+      Script: {instanceID: 13530}
     - Class: 114
-      Script: {instanceID: 13802}
+      Script: {instanceID: 13688}
     - Class: 114
-      Script: {instanceID: 14024}
+      Script: {instanceID: 13806}
     - Class: 114
-      Script: {instanceID: 14044}
+      Script: {instanceID: 14028}
     - Class: 114
-      Script: {instanceID: 14302}
+      Script: {instanceID: 14048}
     - Class: 114
-      Script: {instanceID: 15982}
+      Script: {instanceID: 14306}
+    - Class: 114
+      Script: {instanceID: 15998}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -243,6 +249,12 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
+      Hash: 46c746bc46c01a70ee40154620df8762
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ChestGold
+  - hash:
+      serializedVersion: 2
       Hash: c42672c997f8be6b1aa86a927ebea785
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -285,7 +297,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: f155244ed0fff6237d937dcad55d1645
+      Hash: 46c746bc46c01a70ee40154620df8762
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChestBrown
@@ -409,6 +421,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RectMask2D
+  - hash:
+      serializedVersion: 2
+      Hash: 68a0f46be0de3a2baf36a4cb1663051b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ChestBlue
   - hash:
       serializedVersion: 2
       Hash: 1103fb0758976355cdf9b7d5ce9cb7e0
@@ -837,10 +855,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: f155244ed0fff6237d937dcad55d1645
+      Hash: 46c746bc46c01a70ee40154620df8762
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: ChestGold
+    className: ChestRed
   platform: 2
   scenePathNames:
   - Assets/Scenes/Menu.unity
