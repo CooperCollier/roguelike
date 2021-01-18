@@ -158,7 +158,7 @@ MonoBehaviour:
   attack: 15
   reward: 5
   aggroRadius: 3
-  maxHealth: 25
+  maxHealth: 30
   health: 0
   currentState: 
   playerLocation: {x: 0, y: 0, z: 0}
