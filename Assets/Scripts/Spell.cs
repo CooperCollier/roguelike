@@ -71,4 +71,11 @@ public abstract class Spell : MonoBehaviour {
 
     //--------------------------------------------------------------------------------
 
+    public void SetPositionAndDirection(Vector2 startingPosition, Vector2 startingDirection) {
+        transform.position = startingPosition;
+        direction = startingDirection;
+    }
+
+    //--------------------------------------------------------------------------------
+
 }

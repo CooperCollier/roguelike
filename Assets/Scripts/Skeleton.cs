@@ -66,8 +66,7 @@ public class Skeleton : Enemy {
 
     public override void Attack() {
     	Bone thisBone = Instantiate(bone);
-        thisBone.transform.position = transform.position;
-        thisBone.direction = rigidbody2D.velocity.normalized;
+        thisBone.SetPositionAndDirection(transform.position, rigidbody2D.velocity.normalized);
     }
 
     //--------------------------------------------------------------------------------

@@ -58,7 +58,7 @@ public class UIManager : MonoBehaviour {
 
     void Update() {
 
-    	if (!alive) { Die(); }
+    	if (!alive) { StartCoroutine(Die()); }
         
         if (Input.GetKey(KeyCode.Escape)) { Pause(); }
 
@@ -120,8 +120,9 @@ public class UIManager : MonoBehaviour {
         Time.timeScale = 1f;
     }
 
-    void Die() {
+    IEnumerator Die() {
         pauseButton.SetActive(false);
+        yield return new WaitForSeconds(2);
         deathScreen.SetActive(true);
         Time.timeScale = 0f;
     }

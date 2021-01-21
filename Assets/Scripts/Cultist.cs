@@ -75,6 +75,7 @@ public class Cultist : Enemy {
     }
 
     IEnumerator Attack1() {
+
     	yield return new WaitForSeconds(2f);
 
     	CultistProjectile top = Instantiate(projectile);
@@ -90,25 +91,34 @@ public class Cultist : Enemy {
 			angle = -Vector2.Angle(Vector2.right, directionVector);
 		}
 
-        middle.GetComponent<Transform>().position = transform.position;
-        middle.direction = directionVector;
+        Vector2 midPosition = transform.position;
+        Vector2 midDirection = directionVector;
+        middle.SetPositionAndDirection(midPosition, midDirection);
 
-        top.GetComponent<Transform>().position = transform.position;
-        top.direction = new Vector2(Mathf.Cos((angle + 30) * Mathf.Deg2Rad), Mathf.Sin((angle + 30) * Mathf.Deg2Rad));
+        Vector2 topPosition = transform.position;
+        Vector2 topDirection = new Vector2(Mathf.Cos((angle + 30) * Mathf.Deg2Rad), Mathf.Sin((angle + 30) * Mathf.Deg2Rad));
+        top.SetPositionAndDirection(topPosition, topDirection);
 
-        bottom.GetComponent<Transform>().position = transform.position;
-        bottom.direction = new Vector2(Mathf.Cos((angle - 30) * Mathf.Deg2Rad), Mathf.Sin((angle - 30) * Mathf.Deg2Rad));
+        Vector2 bottomPosition = transform.position;
+        Vector2 bottomDirection = new Vector2(Mathf.Cos((angle - 30) * Mathf.Deg2Rad), Mathf.Sin((angle - 30) * Mathf.Deg2Rad));
+        bottom.SetPositionAndDirection(bottomPosition, bottomDirection);
 
     }
 
     IEnumerator Attack2() {
+
     	yield return new WaitForSeconds(2f);
+
     	for (int i = 0; i < 5; i += 1) {
 			CultistProjectile thisProjectile = Instantiate(projectile);
-        	thisProjectile.transform.position = transform.position;
-        	thisProjectile.direction = (playerLocation - transform.position).normalized;
+
+        	Vector2 newPosition = transform.position;
+        	Vector2 newDirection = (playerLocation - transform.position).normalized;
+            thisProjectile.SetPositionAndDirection(newPosition, newDirection);
+
         	yield return new WaitForSeconds(0.1f);
         }
+
     }
 
     //--------------------------------------------------------------------------------

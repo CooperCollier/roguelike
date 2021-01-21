@@ -79,6 +79,8 @@ public class Player : MonoBehaviour {
 
     public static Vector2 attkDirection = Vector2.zero;
 
+    public Vector2 deathPosition = Vector2.zero;
+
     //--------------------------------------------------------------------------------
 
     void Start() {
@@ -107,8 +109,15 @@ public class Player : MonoBehaviour {
 
     void Update() {
 
-        if (health <= 0) { alive = false; }
-    	if (!alive || (Time.timeScale == 0f) ) {return;}
+    	if (Time.timeScale == 0f) {
+    		return;
+    	} else if (!alive) {
+    		transform.position = deathPosition;
+    		return;
+    	} else if (health <= 0) { 
+    		Die();
+    		return;
+    	}
 
     	Move();
 
@@ -230,8 +239,7 @@ public class Player : MonoBehaviour {
 
             Spell newSpell = (Spell) Instantiate(spells[selectedSpell]);
 
-            newSpell.GetComponent<Transform>().position = transform.position;
-            newSpell.direction = attkDirection;
+            newSpell.SetPositionAndDirection(transform.position, attkDirection);
 
     	} else if (attkTime > 0) {
     		attkTime -= Time.deltaTime;
@@ -267,7 +275,11 @@ public class Player : MonoBehaviour {
 
     	string stateName;
 
-    	if (attkDirection == Vector2.up) {
+    	if (!alive && attkDirection == Vector2.left) {
+    		stateName = "DeathLeft";
+    	} else if (!alive) {
+    		stateName = "DeathRight";
+    	} else if (attkDirection == Vector2.up) {
     		stateName = "AttkUp";
     	} else if (attkDirection == Vector2.down) {
     		stateName = "AttkDown";
@@ -318,6 +330,13 @@ public class Player : MonoBehaviour {
             invincibilityTime = maxInvincibilityTime;
         }
 
+    }
+
+    public void Die() {
+    	alive = false;
+    	rigidbody2D.velocity = Vector2.zero;
+    	deathPosition = transform.position;
+    	UpdateAnimation();
     }
 
     //--------------------------------------------------------------------------------
