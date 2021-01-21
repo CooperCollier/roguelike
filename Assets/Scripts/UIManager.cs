@@ -6,15 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
+    //--------------------------------------------------------------------------------
+
 	[SerializeField]
 	public Player player;
-
-	public int health;
-	public float mana;
-	public int coins;
-	public bool alive;
-	public int selectedSpell;
-	public Spell[] spells;
 
 	public Slider healthBarSlider;
 	public Slider manaBarSlider;
@@ -33,6 +28,13 @@ public class UIManager : MonoBehaviour {
     public GameObject deathScreen;
     [SerializeField]
     public GameObject coinsText;
+
+    public int health;
+    public float mana;
+    public int coins;
+    public bool alive;
+    public int selectedSpell;
+    public Spell[] spells;
 
     //--------------------------------------------------------------------------------
 
