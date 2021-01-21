@@ -92,16 +92,14 @@ public class Spider : Enemy {
 
     public override void UpdateAnimation() {
 
-    	string stateName;
-
     	if (jumping) { 
-    		stateName = "SpiderJump";
+    		currentAnimation = "SpiderJump";
     	} else {
-    		stateName = "SpiderWalk";
+    		currentAnimation = "SpiderWalk";
     	}
 
-        if(!animator.GetCurrentAnimatorStateInfo(0).IsName(stateName)) {
-            animator.Play(stateName, 0);
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation)) {
+            animator.Play(currentAnimation, 0);
         }
 
     }

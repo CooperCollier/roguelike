@@ -74,15 +74,13 @@ public class Skeleton : Enemy {
     public override void UpdateAnimation() {
 
         if (rigidbody2D.velocity.x <= 0) {
-            currentState = "Left";
+            currentAnimation = "SkeletonLeft";
         } else {
-            currentState = "Right";
+            currentAnimation = "SkeletonRight";
         }
 
-        string stateName = "Skeleton" + currentState;
-
-        if(!animator.GetCurrentAnimatorStateInfo(0).IsName(stateName)) {
-            animator.Play(stateName, 0);
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation)) {
+            animator.Play(currentAnimation, 0);
         }
 
     }

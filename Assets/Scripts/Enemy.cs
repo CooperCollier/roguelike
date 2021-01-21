@@ -39,7 +39,7 @@ public abstract class Enemy : MonoBehaviour {
     public int maxHealth;
     public int health;
 
-    public string currentState;
+    public string currentAnimation;
 
     public Vector3 playerLocation;
 

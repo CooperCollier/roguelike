@@ -40,15 +40,13 @@ public class Slime : Enemy {
     public override void UpdateAnimation() {
 
         if (rigidbody2D.velocity.x <= 0) {
-            currentState = "Left";
+            currentAnimation = "SlimeLeft";
         } else {
-            currentState = "Right";
+            currentAnimation = "SlimeRight";
         }
 
-        string stateName = "Slime" + currentState;
-
-        if(!animator.GetCurrentAnimatorStateInfo(0).IsName(stateName)) {
-            animator.Play(stateName, 0);
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation)) {
+            animator.Play(currentAnimation, 0);
         }
 
     }

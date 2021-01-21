@@ -126,15 +126,13 @@ public class Cultist : Enemy {
     public override void UpdateAnimation() {
 
         if (playerLocation.x < transform.position.x) {
-            currentState = "Left";
+            currentAnimation = "CultistLeft";
         } else {
-            currentState = "Right";
+            currentAnimation = "CultistRight";
         }
 
-        string stateName = "Cultist" + currentState;
-
-        if(!animator.GetCurrentAnimatorStateInfo(0).IsName(stateName)) {
-            animator.Play(stateName, 0);
+        if(!animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation)) {
+            animator.Play(currentAnimation, 0);
         }
 
     }

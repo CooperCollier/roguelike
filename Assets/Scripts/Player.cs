@@ -77,7 +77,7 @@ public class Player : MonoBehaviour {
 
     public bool coffeeActive;
 
-    public static Vector2 attkDirection = Vector2.zero;
+    public static Vector2 direction = Vector2.zero;
 
     public Vector2 deathPosition = Vector2.zero;
 
@@ -223,28 +223,28 @@ public class Player : MonoBehaviour {
             }
 
     		if (currentState == State.MoveUp || currentState == State.IdleUp) {
-    			attkDirection = Vector2.up;
+    			direction = Vector2.up;
     		} 
     		if (currentState == State.MoveDown || currentState == State.IdleDown) {
-    			attkDirection = Vector2.down;
+    			direction = Vector2.down;
     		} 
     		if (currentState == State.MoveLeft || currentState == State.IdleLeft) {
-    			attkDirection = Vector2.left;
+    			direction = Vector2.left;
     		} 
     		if (currentState == State.MoveRight || currentState == State.IdleRight) {
-    			attkDirection = Vector2.right;
+    			direction = Vector2.right;
     		}
 
             attkTime = maxAttkTime;
 
             Spell newSpell = (Spell) Instantiate(spells[selectedSpell]);
 
-            newSpell.SetPositionAndDirection(transform.position, attkDirection);
+            newSpell.SetPositionAndDirection(transform.position, direction);
 
     	} else if (attkTime > 0) {
     		attkTime -= Time.deltaTime;
     	} else if (attkTime <= 0) {
-    		attkDirection = Vector2.zero;
+    		direction = Vector2.zero;
     		attkTime = 0;
     	}
 
@@ -275,17 +275,17 @@ public class Player : MonoBehaviour {
 
     	string stateName;
 
-    	if (!alive && attkDirection == Vector2.left) {
+    	if (!alive && direction == Vector2.left) {
     		stateName = "DeathLeft";
     	} else if (!alive) {
     		stateName = "DeathRight";
-    	} else if (attkDirection == Vector2.up) {
+    	} else if (direction == Vector2.up) {
     		stateName = "AttkUp";
-    	} else if (attkDirection == Vector2.down) {
+    	} else if (direction == Vector2.down) {
     		stateName = "AttkDown";
-    	} else if (attkDirection == Vector2.left) {
+    	} else if (direction == Vector2.left) {
     		stateName = "AttkLeft";
-    	} else if (attkDirection == Vector2.right) {
+    	} else if (direction == Vector2.right) {
     		stateName = "AttkRight";
     	} else {
     		stateName = currentState.ToString();
@@ -347,26 +347,23 @@ public class Player : MonoBehaviour {
 
             Item item = (Item) collision.gameObject.GetComponent<Item>();
 
+            bool pickedUpItem = false;
+
             if (item.GetItemType() == "Coin") {
-                GetCoin();
-            }
-            if (item.GetItemType() == "Apple") {
-                GetApple();
-            }
-            if (item.GetItemType() == "GoldApple") {
-                GetGoldApple();
-            }
-            if (item.GetItemType() == "Coffee") {
-                if (!coffeeActive) { StartCoffee(); }
-            }
-            if (item.GetItemType() == "Book") {
-                GetBook();
-            }
-            if (item.GetItemType() == "Scroll") {
-                GetScroll(((Scroll) item).GetSpell());
+                pickedUpItem = GetCoin();
+            } else if (item.GetItemType() == "Apple") {
+                pickedUpItem = GetApple();
+            } else if (item.GetItemType() == "GoldApple") {
+                pickedUpItem = GetGoldApple();
+            } else if (item.GetItemType() == "Coffee") {
+                pickedUpItem = StartCoffee();
+            } else if (item.GetItemType() == "Book") {
+                pickedUpItem = GetBook();
+            } else if (item.GetItemType() == "Scroll") {
+                pickedUpItem = GetScroll(((Scroll) item).GetSpell());
             }
 
-            Destroy(collision.gameObject);
+            if (pickedUpItem) { Destroy(collision.gameObject); }
 
         }
 
@@ -374,28 +371,33 @@ public class Player : MonoBehaviour {
 
     //--------------------------------------------------------------------------------
 
-    public void GetCoin() {
+    public bool GetCoin() {
         coins += 1;
+        return true;
     }
 
-    public void GetApple() {
+    public bool GetApple() {
         health += 20;
         if (health > maxHealth) { health = maxHealth; }
+        return true;
     }
 
-    public void GetGoldApple() {
+    public bool GetGoldApple() {
         health = maxHealth;
+        return true;
     }
 
-    public void GetBook() {
-        Debug.Log("Got a book!");
+    public bool GetBook() {
+        return true;
     }
 
-    public void StartCoffee() {
+    public bool StartCoffee() {
+        if (coffeeActive) { return true; }
         coffeeActive = true;
         speed *= 1.3f;
         dashSpeed *= 1.3f;
         manaRecoveryRate *= 2f;
+        return true;
     }
 
     public void EndCoffee() {
@@ -405,24 +407,24 @@ public class Player : MonoBehaviour {
         manaRecoveryRate /= 2f;
     }
 
-    public void GetScroll(Spell spell) {
+    public bool GetScroll(Spell spell) {
 
         for (int i = 0; i < spells.Length; i += 1) {
             if (spells[i] == null) {
                 continue;
             } else if (spells[i].GetName() == spell.GetName()) {
-                return;
+                return false;
             }
         }
 
         for (int i = 0; i < spells.Length; i += 1) {
             if (spells[i] == null) {
                 spells[i] = spell;
-                return;
+                return true;
             }
         }
 
-        Debug.Log("Not enough space for spell");
+        return false;
 
     }
 
