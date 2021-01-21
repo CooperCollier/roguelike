@@ -21,6 +21,7 @@ ScriptsOnlyBuild:
     - MagicMissile
     - Menu
     - Player
+    - Rock
     - Scroll
     - Skeleton
     - Slime
@@ -205,6 +206,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14052}
     - Class: 114
       Script: {instanceID: 14310}
+    - Class: 114
+      Script: {instanceID: 16554}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -868,6 +871,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 1157c3119395c469e0cc47804eb5fc0d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Environment
+  - hash:
+      serializedVersion: 2
+      Hash: 1157c3119395c469e0cc47804eb5fc0d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Rock
   platform: 2
   scenePathNames:
   - Assets/Scenes/Menu.unity
