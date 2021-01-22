@@ -6,7 +6,9 @@ public class Slime : Enemy {
 
 	//--------------------------------------------------------------------------------
 
-	public float attackTime = 0.2f;
+	public float attackTime = 0.3f;
+
+    public Vector3 destination = Vector3.zero;
 
     //--------------------------------------------------------------------------------
 
@@ -22,7 +24,8 @@ public class Slime : Enemy {
 
     public override void Move() {
 
-    	Vector3 direction = playerLocation - transform.position;
+        destination = playerLocation + new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), 0);
+    	Vector3 direction = destination - transform.position;
     	direction = direction.normalized;
     	rigidbody2D.velocity = direction * speed;
 
@@ -32,7 +35,7 @@ public class Slime : Enemy {
 
     public override void Attack() {
     	player.SendMessage("TakeDamage", attack); // Change This
-        pauseTime = maxPauseTime;
+        //pauseTime = maxPauseTime;
     }
 
     //--------------------------------------------------------------------------------

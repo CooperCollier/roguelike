@@ -10,14 +10,14 @@ public abstract class Enemy : MonoBehaviour {
     public Rigidbody2D rigidbody2D;
     public Animator animator;
 
-    public float maxDamageTime = 0.1f;
-    public float damageTime = 0f;
+    public float maxFlashRedTime = 0.1f;
+    public float flashRedTime = 0f;
 
-    public float maxPauseTime = 0.25f;
-    public float pauseTime = 0f;
+    //public float maxPauseTime = 0.25f;
+    //public float pauseTime = 0f;
 
-    public float maxWaitTime = 1f;
-    public float waitTime = 0f;
+    //public float maxWaitTime = 1f;
+    //public float waitTime = 0f;
 
 	public static Player player;
 
@@ -53,9 +53,9 @@ public abstract class Enemy : MonoBehaviour {
 
     	player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
-        maxDamageTime = 0.1f;
-        maxPauseTime = 0.25f;
-        maxWaitTime = 0.1f;
+        maxFlashRedTime = 0.1f;
+        //maxPauseTime = 0.25f;
+        //maxWaitTime = 0.1f;
 
     	health = maxHealth;
         
@@ -67,13 +67,15 @@ public abstract class Enemy : MonoBehaviour {
 
     	if (health <= 0) { Despawn(); }
 
-        if (damageTime < 0f) {
+        if (flashRedTime < 0f) {
             spriteRenderer.color = Color.white;
             rigidbody2D.velocity = Vector2.zero;
-            damageTime = 0f;
-        } else if (damageTime > 0f) {
-            damageTime -= Time.deltaTime;
+            flashRedTime = 0f;
+        } else if (flashRedTime > 0f) {
+            flashRedTime -= Time.deltaTime;
         }
+
+        /*
 
         if (pauseTime < 0f) {
             pauseTime = 0f;
@@ -88,6 +90,8 @@ public abstract class Enemy : MonoBehaviour {
         } else {
             waitTime -= Time.deltaTime;
         }
+
+        */
 
         playerLocation = player.ReportLocation();
 
@@ -112,10 +116,16 @@ public abstract class Enemy : MonoBehaviour {
     public void TakeDamage(int damage) {
 
     	spriteRenderer.color = Color.red;
-        damageTime = maxDamageTime;
+        flashRedTime = maxFlashRedTime;
     	health -= damage;
     	if (health < 0) { health = 0; }
 
+    }
+
+    //--------------------------------------------------------------------------------
+
+    public void KnockBack(Vector2 direction) {
+        rigidbody2D.AddForce(direction, ForceMode2D.Impulse);
     }
 
     //--------------------------------------------------------------------------------
@@ -131,18 +141,14 @@ public abstract class Enemy : MonoBehaviour {
 
     //--------------------------------------------------------------------------------
 
-    public void Push(Vector2 direction) {
-        rigidbody2D.AddForce(direction, ForceMode2D.Impulse);
-    }
-
-    //--------------------------------------------------------------------------------
-
+    /*
     void OnTriggerStay2D(Collider2D other) {
     	if (other.gameObject.tag == "Enemy") {
     		Vector2 direction = transform.position - other.gameObject.transform.position;
     		transform.Translate(direction.normalized * 0.01f);
     	}
     }
+    */
 
     //--------------------------------------------------------------------------------
 

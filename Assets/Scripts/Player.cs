@@ -7,6 +7,9 @@ public class Player : MonoBehaviour {
 	//--------------------------------------------------------------------------------
 
     [SerializeField]
+    public static Camera camera;
+
+    [SerializeField]
     public Spell magicMissile;
     [SerializeField]
     public Spell fireball;
@@ -33,7 +36,8 @@ public class Player : MonoBehaviour {
     public Book book;
     [SerializeField]
     public Coffee coffee;
-    // More items here...
+
+    //--------------------------------------------------------------------------------
 
     [SerializeField]
 	public float speed;
@@ -103,7 +107,9 @@ public class Player : MonoBehaviour {
     	rigidbody2D = GetComponent<Rigidbody2D>();
     	animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+
+        camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    
     }
 
     //--------------------------------------------------------------------------------
@@ -321,9 +327,10 @@ public class Player : MonoBehaviour {
 
     public void TakeDamage(int damage) {
 
-        if (invincibilityTime > 0 || dashTime > 0) { return; }
+        if (invincibilityTime > 0 || dashTime > 0 || !alive) { return; }
         spriteRenderer.color = Color.red;
         if (coffeeActive) { EndCoffee(); }
+        StartCoroutine(camera.Shake(0.1f, 0.01f));
         health -= damage;
         if (health < 0) { 
             health = 0; 

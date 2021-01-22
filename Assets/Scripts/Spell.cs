@@ -61,7 +61,7 @@ public abstract class Spell : MonoBehaviour {
     public void Attack (GameObject enemy) {
         enemy.SendMessage("TakeDamage", damage); // change this
         Vector2 directionToEnemy = (enemy.transform.position - transform.position).normalized;
-        enemy.SendMessage("Push", directionToEnemy * knockback);
+        enemy.SendMessage("KnockBack", directionToEnemy * knockback);
     }
 
     public void Despawn() {

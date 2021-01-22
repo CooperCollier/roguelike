@@ -56,6 +56,7 @@ MonoBehaviour:
   spear: {fileID: 5059124380305417994, guid: ac88f0aa4d61c4a7ab5f1cd73f955ce9, type: 3}
   iceSpikesSpawn: {fileID: -573230147442772970, guid: 9a6d244b22268439abfbc980b52590e1,
     type: 3}
+  camera: {fileID: 0}
   coin: {fileID: 3021955428932942146, guid: 088018c991c4040edaacc7ee956a160e, type: 3}
   apple: {fileID: 3680088518965939958, guid: 2a6b79674746a48cab45e7c68f1d0dfd, type: 3}
   goldApple: {fileID: 0}
@@ -76,6 +77,7 @@ MonoBehaviour:
   manaRecoveryRate: 10
   dashManaCost: 10
   coffeeActive: 0
+  deathPosition: {x: 0, y: 0}
 --- !u!50 &2631900897007431052
 Rigidbody2D:
   serializedVersion: 4

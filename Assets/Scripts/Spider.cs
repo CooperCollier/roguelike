@@ -85,7 +85,7 @@ public class Spider : Enemy {
 
     public override void Attack() {
     	player.SendMessage("TakeDamage", attack); // Change This
-        pauseTime = maxPauseTime;
+        //pauseTime = maxPauseTime;
     }
 
     //--------------------------------------------------------------------------------
