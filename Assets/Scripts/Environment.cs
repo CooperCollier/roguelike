@@ -10,7 +10,7 @@ public class Environment : MonoBehaviour {
 	//--------------------------------------------------------------------------------
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Spell" && hitPoints <= 0) {
+        if (collision.gameObject.tag == "Spell" && hitPoints <= 1) {
         	Destroy(gameObject);
         } else if (collision.gameObject.tag == "Spell") {
         	hitPoints -= 1;

@@ -59,7 +59,8 @@ public class Player : MonoBehaviour {
     public static int coins;
     public static bool alive;
 
-	public enum State {IdleLeft, IdleRight, IdleUp, IdleDown, MoveLeft, MoveRight, MoveUp, MoveDown};
+	public enum State {IdleLeft, IdleRight, IdleUp, IdleDown, 
+                       MoveLeft, MoveRight, MoveUp, MoveDown};
 	public static State currentState;
 
     public static Spell[] spells = { null, null, null, null };
@@ -273,26 +274,26 @@ public class Player : MonoBehaviour {
 
     void UpdateAnimation() {
 
-    	string stateName;
+    	string animationName;
 
     	if (!alive && direction == Vector2.left) {
-    		stateName = "DeathLeft";
+    		animationName = "DeathLeft";
     	} else if (!alive) {
-    		stateName = "DeathRight";
+    		animationName = "DeathRight";
     	} else if (direction == Vector2.up) {
-    		stateName = "AttkUp";
+    		animationName = "AttkUp";
     	} else if (direction == Vector2.down) {
-    		stateName = "AttkDown";
+    		animationName = "AttkDown";
     	} else if (direction == Vector2.left) {
-    		stateName = "AttkLeft";
+    		animationName = "AttkLeft";
     	} else if (direction == Vector2.right) {
-    		stateName = "AttkRight";
+    		animationName = "AttkRight";
     	} else {
-    		stateName = currentState.ToString();
+    		animationName = currentState.ToString();
     	}
 
-    	if(!animator.GetCurrentAnimatorStateInfo(0).IsName(stateName)) {
-    		animator.Play(stateName, 0);
+    	if(!animator.GetCurrentAnimatorStateInfo(0).IsName(animationName)) {
+    		animator.Play(animationName, 0);
     	}
 
     }
