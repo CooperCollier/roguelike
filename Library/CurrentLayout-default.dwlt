@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 59
+  controlID: 65
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 60
+  controlID: 66
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 61
+  controlID: 67
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 19}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -312,9 +312,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.6961427, y: 0.14014587, z: -29.455463}
+    m_Target: {x: -6.969571, y: -0.039973285, z: -29.474506}
     speed: 2
-    m_Value: {x: 1.6961427, y: 0.14014587, z: -29.455463}
+    m_Value: {x: -6.969571, y: -0.039973285, z: -29.474506}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 60fbffff
+      m_ExpandedIDs: 40b1ffff54b1ffff18b2ffff1eb2ffff5efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -713,10 +713,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: cdd1fa29c9b6c4ab8b80d696c96f9d49,
+  m_AnimatorController: {fileID: 9100000, guid: a8175390144d1431fa93988f30b1836f,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -1171328680056808547, guid: cdd1fa29c9b6c4ab8b80d696c96f9d49,
+  - m_Target: {fileID: -818548832334352641, guid: a8175390144d1431fa93988f30b1836f,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -769,19 +769,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/cooper/Desktop/unity/Roguelike
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 203f0000
-    m_LastClickedID: 16160
+    m_SelectedIDs: 163f0000
+    m_LastClickedID: 16150
     m_ExpandedIDs: 00000000163f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 23174
+  m_LastSelectedObjectID: 43328
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1009,9 +1009,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d63f0000
-    m_LastClickedID: 16342
-    m_ExpandedIDs: 00000000163f0000
+    m_SelectedIDs: 263f0000
+    m_LastClickedID: 16166
+    m_ExpandedIDs: 00000000163f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1067,7 +1067,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: fe890000484b00004e4b00005a4b0000664b0000604b0000544b0000023a0000cc420000da420000dc4200007e430000ae4300003a4200001e42000080450000fc450000983c00005c510000da590000c2a00100123a0000d2460000943a0000c43a00002a3d000084410000e83c0000203d0000263d0000dc3d0000d23d0000043e0000923e0000203e000016400000
+    m_ExpandedInstanceIDs: fe890000484b00004e4b00005a4b0000664b0000604b0000544b0000023a0000cc420000da420000dc4200007e430000ae4300003a4200001e42000080450000fc450000983c00005c510000da590000c2a00100123a0000d2460000943a0000c43a00002a3d000084410000e83c0000203d0000263d0000dc3d0000d23d0000043e0000923e0000203e0000164000000aa90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1091,7 +1091,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 3958.003}
+    m_ScrollPosition: {x: 0, y: 4054.0059}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 155

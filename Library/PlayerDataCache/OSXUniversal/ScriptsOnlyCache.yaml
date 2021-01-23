@@ -4,7 +4,8 @@ ScriptsOnlyBuild:
     - Apple
     - Bone
     - Book
-    - CameraFollow
+    - Bush
+    - Camera
     - ChestBlue
     - ChestBrown
     - ChestGold
@@ -41,8 +42,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -82,15 +85,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11470}
     - Class: 114
-      Script: {instanceID: 12196}
+      Script: {instanceID: 12198}
     - Class: 114
-      Script: {instanceID: 12828}
+      Script: {instanceID: 12832}
     - Class: 114
-      Script: {instanceID: 12906}
+      Script: {instanceID: 12910}
     - Class: 114
-      Script: {instanceID: 13690}
+      Script: {instanceID: 13696}
     - Class: 114
-      Script: {instanceID: 14310}
+      Script: {instanceID: 14316}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -165,49 +168,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11996}
     - Class: 114
-      Script: {instanceID: 12196}
+      Script: {instanceID: 12194}
     - Class: 114
-      Script: {instanceID: 12444}
+      Script: {instanceID: 12198}
     - Class: 114
-      Script: {instanceID: 12734}
+      Script: {instanceID: 12236}
     - Class: 114
-      Script: {instanceID: 12906}
+      Script: {instanceID: 12448}
     - Class: 114
-      Script: {instanceID: 12922}
+      Script: {instanceID: 12738}
     - Class: 114
-      Script: {instanceID: 12972}
+      Script: {instanceID: 12910}
     - Class: 114
-      Script: {instanceID: 13034}
+      Script: {instanceID: 12926}
     - Class: 114
-      Script: {instanceID: 13218}
+      Script: {instanceID: 12976}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 13038}
     - Class: 114
-      Script: {instanceID: 13324}
+      Script: {instanceID: 13222}
+    - Class: 114
+      Script: {instanceID: 13292}
     - Class: 114
       Script: {instanceID: 13328}
     - Class: 114
-      Script: {instanceID: 13404}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13408}
     - Class: 114
-      Script: {instanceID: 13516}
+      Script: {instanceID: 13444}
     - Class: 114
-      Script: {instanceID: 13532}
+      Script: {instanceID: 13522}
     - Class: 114
-      Script: {instanceID: 13690}
+      Script: {instanceID: 13538}
     - Class: 114
-      Script: {instanceID: 13808}
+      Script: {instanceID: 13696}
     - Class: 114
-      Script: {instanceID: 13842}
+      Script: {instanceID: 13814}
     - Class: 114
-      Script: {instanceID: 14032}
+      Script: {instanceID: 13848}
     - Class: 114
-      Script: {instanceID: 14052}
+      Script: {instanceID: 14038}
     - Class: 114
-      Script: {instanceID: 14310}
+      Script: {instanceID: 14058}
     - Class: 114
-      Script: {instanceID: 16554}
+      Script: {instanceID: 14316}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -483,6 +488,12 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: 1157c3119395c469e0cc47804eb5fc0d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Rock
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -507,6 +518,12 @@ ScriptsOnlyBuild:
     className: SpriteShape
   - hash:
       serializedVersion: 2
+      Hash: 1157c3119395c469e0cc47804eb5fc0d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Bush
+  - hash:
+      serializedVersion: 2
       Hash: 5cc439bf63c0539d39588e69465ac2ab
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -525,10 +542,10 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 97c7b70bcb31a568c8fa81876f6661c7
+      Hash: 5ba666ba0b4fc9ddd821ab6c2f14afcb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: CameraFollow
+    className: Camera
   - hash:
       serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
@@ -597,7 +614,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 3bb0f7ed52e0a3d6d74d4a2b41d202ef
+      Hash: c78d13c468f1fbff1bbef6e98ce89ed1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Cultist
@@ -633,7 +650,7 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
-      Hash: 90b787b8f0181ad3e79b9404b5dc905b
+      Hash: e14e4b6260e761f4f28e0f4de5012fc8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Slime
@@ -699,10 +716,16 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 70bd18795e201dcfd78005ce5eeb52e8
+      Hash: 9aeaa51039d29d347b265cb6e5dc1823
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spider
+  - hash:
+      serializedVersion: 2
+      Hash: 1157c3119395c469e0cc47804eb5fc0d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Environment
   - hash:
       serializedVersion: 2
       Hash: 4ed3693b01538c5b5998ff76ef620a01
@@ -747,7 +770,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: c3f2b047b0a69e2ed09177e8bea83784
+      Hash: ebc4de4534d7c79b71765bf4c3773e3f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Skeleton
@@ -871,18 +894,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 1157c3119395c469e0cc47804eb5fc0d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Environment
-  - hash:
-      serializedVersion: 2
-      Hash: 1157c3119395c469e0cc47804eb5fc0d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Rock
   platform: 2
   scenePathNames:
   - Assets/Scenes/Menu.unity

@@ -6,15 +6,22 @@ public class Slime : Enemy {
 
 	//--------------------------------------------------------------------------------
 
-	public float attackTime = 0.3f;
+	public float attackTime = 0f;
 
     public Vector3 destination = Vector3.zero;
+
+    public float attackCooldownTime = 0f;
 
     //--------------------------------------------------------------------------------
 
     public override void SpecificUpdate() {
 
-    	Move();
+        if (attackCooldownTime <= 0f) {
+    	   Move();
+        } else {
+            rigidbody2D.velocity = Vector2.zero;
+            attackCooldownTime -= Time.deltaTime;
+        }
 
         UpdateAnimation();
 
@@ -26,8 +33,15 @@ public class Slime : Enemy {
 
         destination = playerLocation + new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), 0);
     	Vector3 direction = destination - transform.position;
+        float distance = direction.magnitude;
     	direction = direction.normalized;
-    	rigidbody2D.velocity = direction * speed;
+        if (distance > 1f) {
+            rigidbody2D.velocity = direction * speed * 0.9f;
+        } else if (distance < 0.5f) {
+    	   rigidbody2D.velocity = direction * speed * 1.5f;
+        } else {
+            rigidbody2D.velocity = direction * speed;
+        }
 
     }
 
@@ -35,16 +49,20 @@ public class Slime : Enemy {
 
     public override void Attack() {
     	player.SendMessage("TakeDamage", attack); // Change This
-        //pauseTime = maxPauseTime;
+        attackCooldownTime = 1f;
     }
 
     //--------------------------------------------------------------------------------
 
     public override void UpdateAnimation() {
 
-        if (rigidbody2D.velocity.x <= 0) {
+        if (attackCooldownTime > 0 && playerLocation.x <= transform.position.x) {
+            currentAnimation = "SlimeAttkLeft";
+        } else if (attackCooldownTime > 0 && playerLocation.x > transform.position.x) {
+            currentAnimation = "SlimeAttkRight";
+        } else if (rigidbody2D.velocity.x <= 0) {
             currentAnimation = "SlimeLeft";
-        } else {
+        } else if (rigidbody2D.velocity.x > 0) {
             currentAnimation = "SlimeRight";
         }
 
@@ -58,11 +76,11 @@ public class Slime : Enemy {
 
     void OnCollisionStay2D(Collision2D collision) {
         if (collision.gameObject.tag == "Player") {
-        	if (attackTime <= 0) {
+        	if (attackTime > 0.15f) {
         		Attack();
-        		attackTime = 0.3f;
+        		attackTime = 0f;
         	} else {
-        		attackTime -= Time.deltaTime;
+        		attackTime += Time.deltaTime;
         	}
         }
     }

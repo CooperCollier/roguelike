@@ -13,12 +13,6 @@ public abstract class Enemy : MonoBehaviour {
     public float maxFlashRedTime = 0.1f;
     public float flashRedTime = 0f;
 
-    //public float maxPauseTime = 0.25f;
-    //public float pauseTime = 0f;
-
-    //public float maxWaitTime = 1f;
-    //public float waitTime = 0f;
-
 	public static Player player;
 
     public Coin coin;
@@ -54,10 +48,11 @@ public abstract class Enemy : MonoBehaviour {
     	player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         maxFlashRedTime = 0.1f;
-        //maxPauseTime = 0.25f;
-        //maxWaitTime = 0.1f;
 
     	health = maxHealth;
+
+        float speedOffset = Random.Range(0.9f, 1.1f);
+        speed *= speedOffset;
         
     }
 
@@ -74,24 +69,6 @@ public abstract class Enemy : MonoBehaviour {
         } else if (flashRedTime > 0f) {
             flashRedTime -= Time.deltaTime;
         }
-
-        /*
-
-        if (pauseTime < 0f) {
-            pauseTime = 0f;
-        } else if (pauseTime > 0f) {
-            pauseTime -= Time.deltaTime;
-            return;
-        }
-
-        if (waitTime <= 0f) {
-            waitTime = maxWaitTime;
-            rigidbody2D.velocity /= 2f;
-        } else {
-            waitTime -= Time.deltaTime;
-        }
-
-        */
 
         playerLocation = player.ReportLocation();
 
@@ -138,17 +115,6 @@ public abstract class Enemy : MonoBehaviour {
     	}
     	Destroy(gameObject);
     }
-
-    //--------------------------------------------------------------------------------
-
-    /*
-    void OnTriggerStay2D(Collider2D other) {
-    	if (other.gameObject.tag == "Enemy") {
-    		Vector2 direction = transform.position - other.gameObject.transform.position;
-    		transform.Translate(direction.normalized * 0.01f);
-    	}
-    }
-    */
 
     //--------------------------------------------------------------------------------
 

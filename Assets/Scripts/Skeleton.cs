@@ -17,9 +17,7 @@ public class Skeleton : Enemy {
 
 	public override void SpecificUpdate() {
 
-    	if (rigidbody2D.velocity.magnitude <= 0.1) {
-    		Move();
-    	}
+    	Move();
 
     	UpdateAnimation();
 
@@ -38,11 +36,11 @@ public class Skeleton : Enemy {
 
 		if (transform.position.x - playerLocation.x < 0.1f) {
 
-			destination = new Vector3(playerLocation.x, playerLocation.y, 0);
+			destination = playerLocation;
 
 		} else if (transform.position.y - playerLocation.y < 0.1f) {
 
-			destination = new Vector3(playerLocation.x, playerLocation.y, 0);
+			destination = playerLocation;
 
 		} else {
 
