@@ -35,8 +35,6 @@ public abstract class EnemyProjectile : MonoBehaviour {
 
     void Update() {
 
-    	transform.rotation = LookAt2D(direction);
-
     	timeToLive -= Time.deltaTime;
         if (timeToLive <= 0) { Despawn(); }
 
@@ -78,6 +76,7 @@ public abstract class EnemyProjectile : MonoBehaviour {
     public void SetPositionAndDirection(Vector2 startingPosition, Vector2 startingDirection) {
         transform.position = startingPosition;
         direction = startingDirection;
+        transform.rotation = LookAt2D(direction);
     }
 
     //--------------------------------------------------------------------------------

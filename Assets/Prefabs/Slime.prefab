@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0003528595, y: -0.050670605}
+  m_Offset: {x: -0.010130107, y: -0.029915672}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1184181, y: 0.039813153}
+  m_Size: {x: 0.10039985, y: 0.059614293}
   m_EdgeRadius: 0
 --- !u!50 &1317718694637627979
 Rigidbody2D:
@@ -168,12 +168,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   rigidbody2D: {fileID: 0}
   animator: {fileID: 0}
-  maxDamageTime: 0.1
-  damageTime: 0
-  maxPauseTime: 1.5
-  pauseTime: 0
-  maxWaitTime: 0.1
-  waitTime: 0
+  maxFlashRedTime: 0.1
+  flashRedTime: 0
   coin: {fileID: 3021955428932942146, guid: 088018c991c4040edaacc7ee956a160e, type: 3}
   speed: 0.5
   attack: 15
@@ -181,8 +177,11 @@ MonoBehaviour:
   aggroRadius: 2
   maxHealth: 20
   health: 0
-  currentState: 
+  currentAnimation: 
   playerLocation: {x: 0, y: 0, z: 0}
+  attackTime: 0
+  destination: {x: 0, y: 0, z: 0}
+  attackCooldownTime: 0
 --- !u!58 &2088965667341125111
 CircleCollider2D:
   m_ObjectHideFlags: 0
