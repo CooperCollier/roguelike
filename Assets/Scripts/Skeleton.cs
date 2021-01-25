@@ -1,31 +1,87 @@
 ﻿using System.Collections;
+using static System.Math;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Skeleton : Enemy {
 
+	//--------------------------------------------------------------------------------
+
     [SerializeField]
     public Bone bone;
 
-	//--------------------------------------------------------------------------------
-
 	float attackTimer = 2f;
 
-	Vector3 destination;
+	float moveTimer = 0.5f;
+
+	Vector2 direction;
 
     //--------------------------------------------------------------------------------
 
 	public override void SpecificUpdate() {
 
-    	Move();
+		if (moveTimer <= 0) {
+			UpdateMovementDirection();
+			moveTimer = 0.5f;
+		} else {
+			moveTimer -= Time.deltaTime;
+		}
 
-    	UpdateAnimation();
-
-    	if (attackTimer <= 0) {
+		if (attackTimer <= 0) {
     		Attack();
     		attackTimer = 2f;
     	} else {
     		attackTimer -= Time.deltaTime;
+    	}
+
+    	Move();
+
+    	UpdateAnimation();
+
+	}
+
+	//--------------------------------------------------------------------------------
+
+	public void UpdateMovementDirection() {
+
+		if (Abs(transform.position.y - playerLocation.y) < 0.1f) {
+
+			if (transform.position.x < playerLocation.x) {
+				direction = Vector2.right;
+			} else {
+				direction = Vector2.left;
+			}
+
+		} else if (Abs(transform.position.x - playerLocation.x) < 0.1f) {
+
+			if (transform.position.y < playerLocation.y) {
+				direction = Vector2.up;
+			} else {
+				direction = Vector2.down;
+			}
+
+		} else {
+
+			bool randomBool = (Random.value > 0.5f);
+
+    		if (randomBool) {
+    			
+    			if (transform.position.x < playerLocation.x) {
+					direction = Vector2.right;
+				} else {
+					direction = Vector2.left;
+				}
+
+    		} else {
+    			
+    			if (transform.position.y < playerLocation.y) {
+					direction = Vector2.up;
+				} else {
+					direction = Vector2.down;
+				}
+
+    		}
+    		
     	}
 
 	}
@@ -34,29 +90,7 @@ public class Skeleton : Enemy {
 
 	public override void Move() {
 
-		if (transform.position.x - playerLocation.x < 0.1f) {
-
-			destination = playerLocation;
-
-		} else if (transform.position.y - playerLocation.y < 0.1f) {
-
-			destination = playerLocation;
-
-		} else {
-
-			bool randomBool = (Random.value > 0.5f);
-
-    		if (randomBool) {
-    			destination = new Vector3(transform.position.x, playerLocation.y, 0);
-    		} else {
-    			destination = new Vector3(playerLocation.x, transform.position.y, 0);
-    		}
-    		
-    	}
-
-    	Vector3 direction = (destination - transform.position).normalized;
-
-    	rigidbody2D.velocity = direction * speed;
+    	rigidbody2D.velocity = (Vector3) direction * speed;
 
     }
 
@@ -71,10 +105,14 @@ public class Skeleton : Enemy {
 
     public override void UpdateAnimation() {
 
-        if (rigidbody2D.velocity.x <= 0) {
+        if (rigidbody2D.velocity.x < 0) {
             currentAnimation = "SkeletonLeft";
-        } else {
+        } else if (rigidbody2D.velocity.x > 0) {
             currentAnimation = "SkeletonRight";
+        } else if (rigidbody2D.velocity.y < 0) {
+            currentAnimation = "SkeletonFront";
+        } else if (rigidbody2D.velocity.y > 0) {
+            currentAnimation = "SkeletonBack";
         }
 
         if(!animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation)) {
